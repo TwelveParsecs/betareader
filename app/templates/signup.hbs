@@ -1,0 +1,33 @@
+<form>
+  <div id="signup1">
+    <label for="email">Email</label>
+    {{input type="text" id="email"}}
+
+    <label for="password">Password</label>
+    {{input type="text" id="password"}}
+    {{input type="text" id="confirm-password" value="Confirm Password"}}
+  </div>
+
+  <div id="signup2">
+    <label for="pen-name">Pen Name</label>
+    {{input type="text" id="pen-name"}}
+
+    <fieldset>
+      <legend>Birthday</legend>
+        {{input type="text" id="bday-day" value="dd"}}
+        {{input type="text" id="bday-month" value="mm"}}
+        {{input type="text" id="bday-year" value="yyyy"}}
+    </fieldset>
+
+    <label for="education">Highest Education Level</label>
+    <select id="education">
+      <option value="high school">High School</option>
+      <option value="college">College Diploma</option>
+      <option value="bachelors">Bachelors Degree</option>
+      <option value="masters">Masters Degree</option>
+      <option value="doctorate">Doctorate</option>
+    </select>
+  </div>
+</form>
+
+{{outlet}}
