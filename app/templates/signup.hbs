@@ -20,7 +20,7 @@
     </fieldset>
 
     <label for="education">Highest Education Level</label>
-    <select id="education">
+    <select value=education onchange={{action "setEducation" value="target.value"}} id="education">
       <option value="high school">High School</option>
       <option value="college">College Diploma</option>
       <option value="bachelors">Bachelors Degree</option>
@@ -41,7 +41,7 @@
       <option value="4">Less than once a week</option>
     </select>
 
-    <label for="novel-length">How often do you read?</label>
+    <label for="novel-length">What is your ideal novel length?</label>
     <select id="novel-length">
       <option value="1">200 pages</option>
       <option value="2">500 pages</option>
@@ -51,6 +51,7 @@
   </div>
 
   <div id="signup4">
+    Do you write?
     <input type="radio" name="write" id="write-yes" value="1" /><label for="write-yes"> Yes</label>
     <input type="radio" name="write" id="write-no" value="1" /><label for="write-no"> No</label>
 
@@ -62,13 +63,14 @@
     <label for="genres-read">How many years have you been writing seriously?</label>
     {{input type="text" id="years-writing"}}
 
-    <label for="novel-length">How often do you finish drafts?</label>
-    <select id="novel-length">
+    <label for="draft-completion">How often do you finish drafts?</label>
+    <select id="draft-completion">
       <option value="1">Every month</option>
       <option value="2">A few times a year</option>
       <option value="3">A year or more</option>
     </select>
 
+    Have you ever published with a publishing house?
     <input type="radio" name="write" id="published-yes" value="1" /><label for="published-yes"> Yes</label>
     <input type="radio" name="write" id="published-no" value="1" /><label for="published-no"> No</label>
   </div>

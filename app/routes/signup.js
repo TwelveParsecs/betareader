@@ -9,22 +9,19 @@ export default Ember.Route.extend({
   day: '',
   month: '',
   year: '',
-  birthday: '',
-  age: -1,
   education: '',
+  genresRead: '',
   description: '',
-  story_length: '',
-  genres_read: '',
+  storyLength: '',
+  readFreq: '',
+  novelLength: '',
   writes: null,
-  write_freq: -1,
-  experience: '',
-  hours_reading : -1, //hours a week spent reading
-  reader_more: null, //read for an author more than once
+  yearsWriting: -1,
+  draftCompletion: -1,
   published: null,
-  genres_write: '',
-  years_seriously_writing: -1,
-  draft_completion: -1,
-  hours_writing: -1, //hours a week spent writing
+  experience: '',
+  hoursAWeek : -1, //hours a week spent reading
+  description: '',
 
 
   //email validation
@@ -37,40 +34,40 @@ export default Ember.Route.extend({
       const email = this.get('email');
       const password = this.get('password');
       const name = this.get('name');
-      const age = this.get('age');
+      const birthday = new Date(this.get('year'),this.get('month'),this.get('day'));
       const education = this.get('education');
       const description = this.get('description');
-      const story_length = this.get('story_length');
-      const genres_read = this.get('genres_write');
+      const story_length = this.get('storyLength');
+      const genres_read = this.get('genresWrite');
       const writes = this.get('writes');
-      const write_freq = this.get('write_freq');
+      const write_freq = this.get('writeFreq');
       const experience = this.get('experience');
-      const hours_reading = this.get('hours_reading');
-      const reader_more = this.get('reader_more');
+      const hours_reading = this.get('hoursReading');
+      const reader_more = this.get('readerMore');
       const published = this.get('published');
-      const genres_write = this.get('genres_read');
-      const years_seriously_writing = this.get('years_seriously_writing');
-      const draft_completion = this.get('draft_completion');
-      const hours_writing = this.get('hours_writing');
+      const genres_write = this.get('genresRead');
+      const years_seriously_writing = this.get('yearsWriting');
+      const draft_completion = this.get('draftCompletion');
+      const hours_writing = this.get('hoursWriting');
 
 
       const newUser = this.store.createRecord('user', {
         email: email,
         password: password,
         name: name,
-        age: age,
+        birthday: birthday,
         education: education,
         description: description,
-        story_length: story_length,
-        genres_read: genres_read,
+        storyLength: story_length,
+        genresRead: genres_read,
         writes: writes,
-        write_freq: write_freq,
+        writeFreq: write_freq,
         experience: experience,
-        hours_reading: hours_reading,
+        hoursReading: hours_reading,
         reader_more: reader_more,
         published: published,
-        genres_write: genres_write,
-        years_seriously_writing: years_seriously_writing,
+        genresWrite: genresWrite,
+        yearsWriting: yearsWriting,
         draft_completion: draft_completion,
         hours_writing: hours_writing
       });
@@ -78,6 +75,25 @@ export default Ember.Route.extend({
       newUser.save().then((response) => {
         this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
       });
+    },
+
+    setEducation(value){
+      this.set('education',value);
+    },
+    setReadFreq(value){
+      this.set('readFreq',value);
+    },
+    setNovelLength(value){
+      this.set('novelLength',value);
+    },
+    setDraftCompletion(value){
+      this.set('draftCompletion',value);
+    },
+    setExperience(value){
+      this.set('experience',value);
+    },
+    setDraftCompletion(value){
+      this.set('hoursAWeek',value);
     }
   }
 });
