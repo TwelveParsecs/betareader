@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#change this to /index.html before uploading to server
+RewriteRule ^(.*)$ /betareader/dist/index.html#$1 [L]

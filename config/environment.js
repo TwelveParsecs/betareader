@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'betareader',
     environment: environment,
-    rootURL: '/',
+    rootURL: '/betareader/dist/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
