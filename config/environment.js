@@ -17,6 +17,14 @@ module.exports = function(environment) {
       }
     },
 
+    firebase: {
+      apiKey: "AIzaSyBR5Q_2zvrTlIA7OEDiOR65uFROa_oaQX0",
+      authDomain: "betareader-907ee.firebaseapp.com",
+      databaseURL: "https://betareader-907ee.firebaseio.com",
+      storageBucket: "betareader-907ee.appspot.com",
+      messagingSenderId: "282654402608"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
