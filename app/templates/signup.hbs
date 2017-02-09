@@ -1,22 +1,22 @@
 <form>
   <div id="signup1">
     <label for="email">Email</label>
-    {{input type="text" id="email"}}
+    {{input type="text" value=email id="email"}}
 
     <label for="password">Password</label>
-    {{input type="text" id="password"}}
-    {{input type="text" id="confirm-password" value="Confirm Password"}}
+    {{input type="text" value=password id="password"}}
+    {{input type="text" value=confirmPassword id="confirm-password" value="Confirm Password"}}
   </div>
 
   <div id="signup2">
     <label for="pen-name">Pen Name</label>
-    {{input type="text" id="pen-name"}}
+    {{input type="text" value=name id="pen-name"}}
 
     <fieldset>
       <legend>Birthday</legend>
-        {{input type="text" id="bday-day" value="dd"}}
-        {{input type="text" id="bday-month" value="mm"}}
-        {{input type="text" id="bday-year" value="yyyy"}}
+        {{input type="text" value=day id="bday-day" value="dd"}}
+        {{input type="text" value=month id="bday-month" value="mm"}}
+        {{input type="text" value=year id="bday-year" value="yyyy"}}
     </fieldset>
 
     <label for="education">Highest Education Level</label>
@@ -97,7 +97,7 @@
     <label for="description">Write a little about yourself.</label>
     {{textarea id="description" cols="80" rows="6"}}
   </div>
-<input type="submit" value="Finish">
+  <button {{action "newUser"}}>Finish</button>
 </form>
 
 {{outlet}}
