@@ -20,13 +20,8 @@
     </fieldset>
 
     <label for="education">Highest Education Level</label>
-    <select value=education onchange={{action "setEducation" value="target.value"}} id="education">
-      <option value="high school">High School</option>
-      <option value="college">College Diploma</option>
-      <option value="bachelors">Bachelors Degree</option>
-      <option value="masters">Masters Degree</option>
-      <option value="doctorate">Doctorate</option>
-    </select>
+    {{drop-down options=educationOptions id="education"}}
+
   </div>
 
   <div id="signup3">
@@ -34,20 +29,10 @@
     {{input type="text" id="genres-read"}}
 
     <label for="read-freq">How often do you read?</label>
-    <select id="read-freq">
-      <option value="1">Every day</option>
-      <option value="2">More than twice a week</option>
-      <option value="3">Once a week</option>
-      <option value="4">Less than once a week</option>
-    </select>
+    {{drop-down options=readFreqOptions id="read-freq"}}
 
     <label for="novel-length">What is your ideal novel length?</label>
-    <select id="novel-length">
-      <option value="1">200 pages</option>
-      <option value="2">500 pages</option>
-      <option value="3">1000 pages</option>
-      <option value="4">1000 pages</option>
-    </select>
+    {{drop-down options=novelLengthOptions id="novel-length"}}
   </div>
 
   <div id="signup4">
@@ -55,20 +40,16 @@
     <input type="radio" name="write" id="write-yes" value="1" /><label for="write-yes"> Yes</label>
     <input type="radio" name="write" id="write-no" value="1" /><label for="write-no"> No</label>
 
-    <label for="genres-read">What genres do you write?</label>
-    {{input type="text" id="genres-read"}}
+    <label for="genres-write">What genres do you write?</label>
+    {{input type="text" id="genres-write"}}
   </div>
 
   <div id="signup5">
-    <label for="genres-read">How many years have you been writing seriously?</label>
+    <label for="years-writing">How many years have you been writing seriously?</label>
     {{input type="text" id="years-writing"}}
 
     <label for="draft-completion">How often do you finish drafts?</label>
-    <select id="draft-completion">
-      <option value="1">Every month</option>
-      <option value="2">A few times a year</option>
-      <option value="3">A year or more</option>
-    </select>
+    {{drop-down options=draftCompletionOptions id="draft-completion"}}
 
     Have you ever published with a publishing house?
     <input type="radio" name="write" id="published-yes" value="1" /><label for="published-yes"> Yes</label>
@@ -78,21 +59,10 @@
   <div id="signup6">
 
     <label for="experience">How much experience do you have with critique?</label>
-    <select id="experience">
-      <option value="1">Very experienced</option>
-      <option value="2">Moderately experienced</option>
-      <option value="3">Little experience</option>
-      <option value="4">No experience</option>
-    </select>
+    {{drop-down options=experienceOptions id="experience"}}
 
     <label for="hours">How many hours a week do you have for critique?</label>
-    <select id="hours">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="4">5+</option>
-    </select>
+    {{drop-down options=hoursOptions id="hours"}}
   </div>
 
   <div id="signup7">

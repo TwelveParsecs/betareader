@@ -1,16 +1,7 @@
-<!--https://spin.atomicobject.com/2016/02/23/ember-2-select-box/-->
-
-select disabled={{disabled}} class="{{class}}" {{action 'change' on='change'}}>
-  {{#if prompt}}
-    <option disabled selected={{is-not selection}}>
-      {{prompt}}
-    </option>
-  {{/if}}
-  {{#each content as |item|}}
-    <option value={{read-path item optionValuePath}}>
-      {{read-path item optionLabelPath}}
-    </option>
+<select onchange={{action "setSelection" value="target.value"}}>
+  
+  {{#each options as |selectOption|}}
+    <option value={{selectOption}}>{{selectOption}}</option>
   {{/each}}
-</select>
 
-{{yield}}
+</select>
