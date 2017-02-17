@@ -20,7 +20,7 @@
     </fieldset>
 
     <label for="education">Highest Education Level</label>
-    {{drop-down options=educationOptions id="education"}}
+    {{drop-down options=educationOptions id="education" sendOptions="setEducation"}}
 
   </div>
 
@@ -29,7 +29,7 @@
     {{input type="text" id="genres-read"}}
 
     <label for="read-freq">How often do you read?</label>
-    {{drop-down options=readFreqOptions id="read-freq"}}
+    {{drop-down options=readFreqOptions id="read-freq" sendOptions="setEducation"}}
 
     <label for="novel-length">What is your ideal novel length?</label>
     {{drop-down options=novelLengthOptions id="novel-length"}}

@@ -5,19 +5,17 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   name: DS.attr('string'),
-  birthday: DS.attr('number'),
+  birthday: DS.attr('date'),
   education: DS.attr('string'),
-  description: DS.attr('string'),
-  story_length: DS.attr('string'),
-  genres_read: DS.attr('string'),
+  genresRead: DS.attr('string'),
+  readFreq: DS.attr('string'),
+  novelLength: DS.attr('string'),
   writes: DS.attr('boolean'),
-  write_freq: DS.attr('number'),
-  experience: DS.attr('string'),
-  hours_reading : DS.attr('number'), //hours a week spent reading
-  reader_more: DS.attr('boolean'), //read for an author more than once
+  genresWrite: DS.attr('string'),
+  yearsWriting: DS.attr('number'),
+  draftCompletion: DS.attr('number'),
   published: DS.attr('boolean'),
-  genres_write: DS.attr('string'),
-  years_seriously_writing: DS.attr('number'),
-  draft_completion: DS.attr('number'),
-  hours_writing: DS.attr('number'), //hours a week spent writing
+  experience: DS.attr('string'),
+  hoursCritique: DS.attr('number'), //hours a week for critique
+  description: DS.attr('string')
 });

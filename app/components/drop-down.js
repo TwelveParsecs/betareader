@@ -1,15 +1,12 @@
 import Ember from 'ember';
 export default Ember.Component.extend({
-  options: ["College","Thing"],
+  options:null,
+  todo: null,
   selectedOption: null,
   actions: {
-    setSelection: function(selected) {
-      //this.set('selectedOption', selected);
-      //console.log(this.get('selectedOption'));
+    setSelection(selected) {
+      this.set('selectedOption', selected);
+      this.sendAction( 'sendOptions', selected);
     },
-    submit: function(){
-      //selectedOption = this.get('selectedOption');
-      //this.sendAction('submit', selectedOption);
-    }
   }
 });

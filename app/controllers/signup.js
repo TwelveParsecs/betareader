@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  funStuff: 'STUFF',
   email: '',
   password: '',
   confirmPassword: '',
@@ -11,14 +10,15 @@ export default Ember.Controller.extend({
   year: '',
   education: '',
   genresRead: '',
-  novelLength: '',
   readFreq: '',
+  novelLength: '',
   writes: null,
+  genresWrite: '',
   yearsWriting: -1,
   draftCompletion: -1,
   published: null,
   experience: '',
-  hoursAWeek : -1, //hours a week spent reading
+  hoursCritique : -1, //hours a week spent reading
   description: '',
 
 
@@ -42,19 +42,17 @@ export default Ember.Controller.extend({
       const name = this.get('name');
       const birthday = new Date(this.get('year'),this.get('month'),this.get('day'));
       const education = this.get('education');
-      const description = this.get('description');
       const novelLength = this.get('novelLength');
       const genresRead = this.get('genresRead');
+      const readFreq = this.get('readFreq');
       const writes = this.get('writes');
-      const writeFreq = this.get('writeFreq');
-      const experience = this.get('experience');
-      const hoursReading = this.get('hoursReading');
-      const readerMore = this.get('readerMore');
-      const published = this.get('published');
       const genresWrite = this.get('genresWrite');
       const yearsWriting = this.get('yearsWriting');
       const draftCompletion = this.get('draftCompletion');
-      const hoursWriting = this.get('hoursWriting');
+      const published = this.get('published');
+      const experience = this.get('experience');
+      const hoursCritique = this.get('hoursCritique');
+      const description = this.get('description');
 
 
       const newUser = this.store.createRecord('user', {
@@ -63,19 +61,17 @@ export default Ember.Controller.extend({
         name: name,
         birthday: birthday,
         education: education,
-        description: description,
         novelLength: novelLength,
         genresRead: genresRead,
+        readFreq : readFreq,
         writes: writes,
-        writeFreq: writeFreq,
-        experience: experience,
-        hoursReading: hoursReading,
-        reader_more: readerMore,
-        published: published,
         genresWrite: genresWrite,
         yearsWriting: yearsWriting,
         draft_completion: draftCompletion,
-        hours_writing: hoursWriting
+        published: published,
+        experience: experience,
+        hoursCritique: hoursCritique,
+        description: description,
       });
 
       newUser.save().then((response) => {
@@ -85,9 +81,11 @@ export default Ember.Controller.extend({
 
     setEducation(value){
       this.set('education',value);
+      console.log(this.get('education'));
     },
     setReadFreq(value){
       this.set('readFreq',value);
+      console.log(value);
     },
     setNovelLength(value){
       this.set('novelLength',value);
