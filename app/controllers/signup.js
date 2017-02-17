@@ -14,8 +14,8 @@ export default Ember.Controller.extend({
   novelLength: '',
   writes: null,
   genresWrite: '',
-  yearsWriting: -1,
-  draftCompletion: -1,
+  yearsWriting: '',
+  draftCompletion: '',
   published: null,
   experience: '',
   hoursCritique : -1, //hours a week spent reading
@@ -81,11 +81,9 @@ export default Ember.Controller.extend({
 
     setEducation(value){
       this.set('education',value);
-      console.log(this.get('education'));
     },
     setReadFreq(value){
       this.set('readFreq',value);
-      console.log(value);
     },
     setNovelLength(value){
       this.set('novelLength',value);
@@ -98,6 +96,12 @@ export default Ember.Controller.extend({
     },
     setHours(value){
       this.set('hoursAWeek',value);
+    },
+    setWrites(value){
+      this.set('writes',value);
+    },
+    setPublished(value){
+      this.set('published',value);
     }
   },
 });
