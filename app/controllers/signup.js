@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  responseMessage: '',
+
+  //Table data
   email: '',
   password: '',
   confirmPassword: '',
@@ -8,17 +11,17 @@ export default Ember.Controller.extend({
   day: '',
   month: '',
   year: '',
-  education: '',
+  education: 'High School',
   genresRead: '',
-  readFreq: '',
-  novelLength: '',
+  readFreq: 'Every day',
+  novelLength: '> 200 Pages',
   writes: null,
   genresWrite: '',
   yearsWriting: '',
-  draftCompletion: '',
+  draftCompletion: 'Every Month',
   published: null,
-  experience: '',
-  hoursCritique : -1, //hours a week spent reading
+  experience: 'Very experienced',
+  hoursCritique : '1', //hours a week available for critique
   description: '',
 
 
@@ -28,7 +31,7 @@ export default Ember.Controller.extend({
   novelLengthOptions: ['> 200 Pages', '> 500 pages', '> 1000 pages'],
   draftCompletionOptions: ['Every Month', 'A few times a year','A year or more'],
   experienceOptions: ['Very experienced','Moderately experienced','Little experience','No experience'],
-  hoursOptions: ['1','2','3','4','5'],
+  hoursOptions: ['1','2','3','4','5+'],
 
   // Email validation
   isValid: Ember.computed.match('email', /^.+@.+\..+$/),
@@ -40,16 +43,16 @@ export default Ember.Controller.extend({
       const email = this.get('email');
       const password = this.get('password');
       const name = this.get('name');
-      const birthday = new Date(this.get('year'),this.get('month'),this.get('day'));
+      const birthday = new Date(parseInt(this.get('year')),parseInt(this.get('month')),parseInt(this.get('day')));
       const education = this.get('education');
       const novelLength = this.get('novelLength');
       const genresRead = this.get('genresRead');
       const readFreq = this.get('readFreq');
-      const writes = this.get('writes');
+      const writes = (this.get('writes') === '1'); // Convert string to boolean
       const genresWrite = this.get('genresWrite');
       const yearsWriting = this.get('yearsWriting');
       const draftCompletion = this.get('draftCompletion');
-      const published = this.get('published');
+      const published = (this.get('published') === '1'); // Convert string to boolean
       const experience = this.get('experience');
       const hoursCritique = this.get('hoursCritique');
       const description = this.get('description');
@@ -75,6 +78,7 @@ export default Ember.Controller.extend({
       });
 
       newUser.save().then((response) => {
+        console.log("sent!");
         this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
       });
     },
