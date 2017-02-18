@@ -24,7 +24,6 @@ export default Ember.Controller.extend({
   hoursCritique : '1', //hours a week available for critique
   description: '',
 
-
   // Drop down options
   educationOptions: ['High School', 'College Diploma', 'Bachelors Degree', 'Masters Degree', 'Doctorate'],
   readFreqOptions: ['Every day','More than once a week','Once a week','Less than once a week'],
@@ -39,7 +38,8 @@ export default Ember.Controller.extend({
 
   // Send form
   actions: {
-    signUp() {
+    firebaseApp: Ember.inject.service(),
+    signUpTwo() {
       const email = this.get('email');
       const password = this.get('password');
       const name = this.get('name');
@@ -57,30 +57,41 @@ export default Ember.Controller.extend({
       const hoursCritique = this.get('hoursCritique');
       const description = this.get('description');
 
+      // Authentication
+      var ref = this.get('firebaseApp').auth();
+      var _this = this;
 
-      const newUser = this.store.createRecord('user', {
-        email: email,
-        password: password,
-        name: name,
-        birthday: birthday,
-        education: education,
-        novelLength: novelLength,
-        genresRead: genresRead,
-        readFreq : readFreq,
-        writes: writes,
-        genresWrite: genresWrite,
-        yearsWriting: yearsWriting,
-        draft_completion: draftCompletion,
-        published: published,
-        experience: experience,
-        hoursCritique: hoursCritique,
-        description: description,
+      // Create new account
+      ref.createUserWithEmailAndPassword(email, password).then((userResponse) => {
+      // const user = this.store.createRecord('user', {
+      //   id: userResponse.uid,
+      //   email: userResponse.email
+      console.log("user created");
       });
+      //return user.save();
 
-      newUser.save().then((response) => {
-        console.log("sent!");
-        this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
-      });
+      //
+      // var newUser = this.store.createRecord('user', {
+      //   id: userData.uid,
+      //   name: name,
+      //   birthday: birthday,
+      //   education: education,
+      //   novelLength: novelLength,
+      //   genresRead: genresRead,
+      //   readFreq : readFreq,
+      //   writes: writes,
+      //   genresWrite: genresWrite,
+      //   yearsWriting: yearsWriting,
+      //   draft_completion: draftCompletion,
+      //   published: published,
+      //   experience: experience,
+      //   hoursCritique: hoursCritique,
+      //   description: description,
+      // });
+      // newUser.save().then((response) => {
+      //   console.log("sent!");
+      //   this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
+      // });
     },
 
     setEducation(value){
