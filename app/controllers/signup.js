@@ -99,6 +99,7 @@ export default Ember.Controller.extend({
     },
     setWrites(value){
       this.set('writes',value);
+      console.log(this.get('writes',value));
     },
     setPublished(value){
       this.set('published',value);

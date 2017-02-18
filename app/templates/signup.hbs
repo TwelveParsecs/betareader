@@ -37,8 +37,19 @@
 
   <div id="signup4">
     Do you write?
-    {{radio-button value='1' checked="setWrites" id="write-yes"}}<label for="write-yes"> Yes</label>
-    {{radio-button value='0' checked="setWrites" id="write-no"}}<label for="write-no"> No</label>
+    {{#radio-button
+      value="1"
+      groupValue=writes
+      changed="setWrites"}}
+      Yes
+    {{/radio-button}}
+
+    {{#radio-button
+      value="0"
+      groupValue=writes
+      changed="setWrites"}}
+      No
+    {{/radio-button}}
 
     <label for="genres-write">What genres do you write?</label>
     {{input type="text" value=genresWrite id="genres-write"}}
@@ -52,8 +63,19 @@
     {{drop-down options=draftCompletionOptions id="draft-completion" sendOptions="setDraftCompletion"}}
 
     Have you ever published with a publishing house?
-    {{radio-button value='1' checked="setPublished" id="published-yes"}}<label for="published-yes"> Yes</label>
-    {{radio-button value='0' checked="setPublished" id="published-no"}}<label for="published-no"> No</label>
+    {{#radio-button
+      value="1"
+      groupValue=published
+      changed="setPublished"}}
+      Yes
+    {{/radio-button}}
+
+    {{#radio-button
+      value="0"
+      groupValue=published
+      changed="setPublished"}}
+      No
+    {{/radio-button}}
   </div>
 
   <div id="signup6">
