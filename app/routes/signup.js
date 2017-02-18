@@ -23,11 +23,52 @@ export default Ember.Route.extend({
       const description = controller.get('description');
 
       var ref = this.get('firebaseApp').auth();
+      var _this = this;
 
       // Create new account
-      ref.createUserWithEmailAndPassword(email, password).then((userResponse) => {
-        console.log("user created");
-      });
+      ref.createUserWithEmailAndPassword(email, password)
+        .then((userResponse) => {
+          _this.get('session').open('firebase', {
+            provider: 'password',
+            'email': email,
+            'password': password
+          })
+          .then(function(){
+            var user = _this.store.createRecord('user', {
+              id: userResponse.uid,
+              name: name,
+              birthday: birthday,
+              education: education,
+              novelLength: novelLength,
+              genresRead: genresRead,
+              readFreq : readFreq,
+              writes: writes,
+              genresWrite: genresWrite,
+              yearsWriting: yearsWriting,
+              draft_completion: draftCompletion,
+              published: published,
+              experience: experience,
+              hoursCritique: hoursCritique,
+              description: description
+            });
+
+            user.save().then(function(){
+              console.log("data stored");
+            //_this.transitionTo('protected');
+            });
+          });
+        }).catch((error) => {
+          // let authError = error as firebase.auth.Error;
+          // let errorCode = authError.code;
+          // let errorMessage = authError.message;
+          //
+          // if (errorMessage === "auth/weak-password") {
+          //   alert("The password is too weak.");
+          // } else {
+          //   alert(errorMessage);
+          // }
+          console.log(error);
+        });
     }
   }
 });
