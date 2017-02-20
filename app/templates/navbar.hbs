@@ -9,10 +9,5 @@
     <li>
       {{#link-to "critiques" }} Critiques{{/link-to}}
     </li>
-    {{#if session.isAuthenticated}}
-      <li>
-        <button {{action 'logout'}}>Logout</button>
-      </li>
-    {{/if}}
   </ul>
 </nav>

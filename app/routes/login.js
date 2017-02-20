@@ -13,9 +13,9 @@ export default Ember.Route.extend({
                 password: password
            }).then(function() {
                console.log(path);
-               this.transitionTo(path);
+               //this.transitionTo(path);
                console.log("transition");
-               this.transitionTo('newproject');
+               this.transitionTo('matches');
            }.bind(this));
        },
        logout: function() {

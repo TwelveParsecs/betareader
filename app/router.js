@@ -8,13 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('signup');
-  this.route('navbar');
-  this.route('newproject');
-  this.route('matches');
-  this.route('projects');
-  this.route('critiques');
+  this.authenticatedRoute('newproject');
+  this.authenticatedRoute('matches');
+  this.authenticatedRoute('projects');
+  this.authenticatedRoute('critiques');
   this.route('login');
-
 });
 
 export default Router;
