@@ -54,7 +54,7 @@ export default Ember.Route.extend({
 
             user.save().then(function(){
               console.log("data stored");
-            //_this.transitionTo('protected');
+            //_this.transitionTo('matches');
             });
           });
         }).catch((error) => {

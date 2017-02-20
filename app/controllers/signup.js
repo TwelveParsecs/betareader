@@ -38,36 +38,36 @@ export default Ember.Controller.extend({
 
   // Send form
   actions: {
-    firebaseApp: Ember.inject.service(),
-    signUpTwo() {
-      const email = this.get('email');
-      const password = this.get('password');
-      const name = this.get('name');
-      const birthday = new Date(parseInt(this.get('year')),parseInt(this.get('month')),parseInt(this.get('day')));
-      const education = this.get('education');
-      const novelLength = this.get('novelLength');
-      const genresRead = this.get('genresRead');
-      const readFreq = this.get('readFreq');
-      const writes = (this.get('writes') === '1'); // Convert string to boolean
-      const genresWrite = this.get('genresWrite');
-      const yearsWriting = this.get('yearsWriting');
-      const draftCompletion = this.get('draftCompletion');
-      const published = (this.get('published') === '1'); // Convert string to boolean
-      const experience = this.get('experience');
-      const hoursCritique = this.get('hoursCritique');
-      const description = this.get('description');
+    //firebaseApp: Ember.inject.service(),
+    //signUp() {
+      // const email = this.get('email');
+      // const password = this.get('password');
+      // const name = this.get('name');
+      // const birthday = new Date(parseInt(this.get('year')),parseInt(this.get('month')),parseInt(this.get('day')));
+      // const education = this.get('education');
+      // const novelLength = this.get('novelLength');
+      // const genresRead = this.get('genresRead');
+      // const readFreq = this.get('readFreq');
+      // const writes = (this.get('writes') === '1'); // Convert string to boolean
+      // const genresWrite = this.get('genresWrite');
+      // const yearsWriting = this.get('yearsWriting');
+      // const draftCompletion = this.get('draftCompletion');
+      // const published = (this.get('published') === '1'); // Convert string to boolean
+      // const experience = this.get('experience');
+      // const hoursCritique = this.get('hoursCritique');
+      // const description = this.get('description');
 
       // Authentication
-      var ref = this.get('firebaseApp').auth();
-      var _this = this;
+      // var ref = this.get('firebaseApp').auth();
+      // var _this = this;
 
       // Create new account
-      ref.createUserWithEmailAndPassword(email, password).then((userResponse) => {
+      // ref.createUserWithEmailAndPassword(email, password).then((userResponse) => {
       // const user = this.store.createRecord('user', {
       //   id: userResponse.uid,
       //   email: userResponse.email
-      console.log("user created");
-      });
+      // console.log("user created");
+      // });
       //return user.save();
 
       //
@@ -92,7 +92,7 @@ export default Ember.Controller.extend({
       //   console.log("sent!");
       //   this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
       // });
-    },
+    //},
 
     setEducation(value){
       this.set('education',value);

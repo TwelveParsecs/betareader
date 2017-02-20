@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('projects');
   this.route('critiques');
   this.route('login');
+
 });
 
 export default Router;

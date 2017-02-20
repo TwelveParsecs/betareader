@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   actions: {
        login: function() {
          var controller = this.get('controller');
+         var path = controller.get('path');
          var email = controller.get('email');
          var password = controller.get('password');
            this.get('session').open('firebase', {
@@ -11,7 +12,10 @@ export default Ember.Route.extend({
                 email: email,
                 password: password
            }).then(function() {
-               this.transitionTo('matches');
+               console.log(path);
+               this.transitionTo(path);
+               console.log("transition");
+               this.transitionTo('newproject');
            }.bind(this));
        },
        logout: function() {

@@ -1,5 +1,7 @@
 {{partial 'navbar'}}
 
+ <h1>New Project</h1>
+
 <div>
   Upload your manuscript
   <div class="input-instruct">
@@ -7,9 +9,36 @@
   </div>
 </div>
 
-<div>
+<label for="title">Title</label>
+{{input type="text" value=title id="title"}}
+
+<label for="description">A short description of your project</label>
+{{input type="text" value=description id="description"}}
+
+<label for="critique-instructions">What kind of critique do you want? What should your readers know?</label>
+{{input type="text" value=critiqueInstruction  id="critique-instructions"}}
+
+<label for="words-in-preview">How many words in this preview?</label>
+{{input type="text" value=wordsInPreview  id="words-in-preview"}}
+
+<label for="words-in-manuscript">How many words are in the manuscript?</label>
+{{input type="text" value=wordsInManuscript  id="words-in-manuscript"}}
+
+<label for="age-limit">Age limit?</label>
+{{input type="text" value=ageLimit  id="age-limit"}}
+
+<label for="looking-for">What are you looking for?</label>
+{{input type="text" value=lookingFor id="looking-for"}}
+{{drop-down options=lookingForOptions id="looking-for" sendOptions="setLookingFor"}}
+
+<label for="tags">Add some tags</label>
+{{input type="text" value=tags id="tags"}}
+{{input type="checkbox" checked=matureContent name="matureContent" id="mature-content"}}
+
+<button {{action "newProject"}}>Create Project</button>
+<!-- <div>
   Upload your preview
   <div class="input-instruct">
     This is the excerpt that a potential reader will review. It can be a few pages or an entire chapter.
   </div>
-</div>
+</div> -->
