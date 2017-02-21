@@ -13,10 +13,10 @@
 {{input type="text" value=title id="title"}}
 
 <label for="description">A short description of your project</label>
-{{input type="text" value=description id="description"}}
+{{textarea value=description id="description" cols="80" rows="6"}}
 
 <label for="critique-instructions">What kind of critique do you want? What should your readers know?</label>
-{{input type="text" value=critiqueInstruction  id="critique-instructions"}}
+{{textarea value=critiqueInstruction  id="critique-instructions" cols="80" rows="6"}}
 
 <label for="words-in-preview">How many words in this preview?</label>
 {{input type="text" value=wordsInPreview  id="words-in-preview"}}
@@ -32,9 +32,11 @@
 
 <label for="tags">Add some tags</label>
 {{input type="text" value=tags id="tags"}}
+
+<label for="mature-content">Mature Content</label>
 {{input type="checkbox" checked=matureContent name="matureContent" id="mature-content"}}
 
-<button {{action "newProject"}}>Create Project</button>
+<button {{action "createProject"}}>Create Project</button>
 <!-- <div>
   Upload your preview
   <div class="input-instruct">

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    lookingFor: "",
+    lookingFor: 'One time critique',
     lookingForOptions: ['One time critique', "Ongoing feedback", "Not sure yet"],
 
     actions: {

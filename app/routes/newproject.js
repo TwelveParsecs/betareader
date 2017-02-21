@@ -1,14 +1,16 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
+  sessionData: storageFor('session-data'),
+
   actions: {
 
       createProject() {
-
          const controller = this.get("controller");
-         const userID = this.session
-         const manuscriptPath = ''//controller.get('manuscriptPath');
-         const previewPath = ''//controller.get('previewPath');
+         const userID = this.get('sessionData.userID');
+         const manuscriptPath = '';//controller.get('manuscriptPath');
+         const previewPath = '';//controller.get('previewPath');
          const title = controller.get('title');
          const description = controller.get('description');
          const critiqueInstructions = controller.get('critiqueInstructions');
@@ -21,26 +23,24 @@ export default Ember.Route.extend({
 
         // Create new project
         var project = this.store.createRecord('project', {
-          // id: userResponse.uid,
-          // name: name,
-          // birthday: birthday,
-          // education: education,
-          // novelLength: novelLength,
-          // genresRead: genresRead,
-          // readFreq : readFreq,
-          // writes: writes,
-          // genresWrite: genresWrite,
-          // yearsWriting: yearsWriting,
-          // draft_completion: draftCompletion,
-          // published: published,
-          // experience: experience,
-          // hoursCritique: hoursCritique,
-          // description: description
+
+        userID: userID,
+        manuscriptPath: manuscriptPath,
+        previewPath: previewPath,
+        title: title,
+        description: description,
+        critiqueInstructions: critiqueInstructions,
+        wordsInPreview: wordsInPreview,
+        wordsInManuscript: wordsInManuscript,
+        ageLimit: ageLimit,
+        lookingFor: lookingFor,
+        tags: tags,
+        matureContent: matureContent,
+
         });
 
         project.save().then(function(){
               console.log("data stored");
-              //_this.transitionTo('matches');
             });
       }
   }
