@@ -23,25 +23,32 @@ export default Ember.Route.extend({
 
         // Create new project
         var project = this.store.createRecord('project', {
-
-        userID: userID,
-        manuscriptPath: manuscriptPath,
-        previewPath: previewPath,
-        title: title,
-        description: description,
-        critiqueInstructions: critiqueInstructions,
-        wordsInPreview: wordsInPreview,
-        wordsInManuscript: wordsInManuscript,
-        ageLimit: ageLimit,
-        lookingFor: lookingFor,
-        tags: tags,
-        matureContent: matureContent,
-
+          userID: userID,
+          manuscriptPath: manuscriptPath,
+          previewPath: previewPath,
+          title: title,
+          description: description,
+          critiqueInstructions: critiqueInstructions,
+          wordsInPreview: wordsInPreview,
+          wordsInManuscript: wordsInManuscript,
+          ageLimit: ageLimit,
+          lookingFor: lookingFor,
+          matureContent: matureContent,
         });
 
-        project.save().then(function(){
-              console.log("data stored");
-            });
+        project.save().then((response) => {
+            // Create tag records for project
+            console.log(response.id);
+
+            for (let i = 0; i < tags.length; i++){
+              let tag = this.store.createRecord ('tags',{
+                name:tags[i],
+                projectID:response.id
+              });
+
+              tag.save();
+            }
+          });
       }
   }
 });

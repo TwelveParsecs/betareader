@@ -7,12 +7,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
   this.route('signup');
   this.authenticatedRoute('newproject');
   this.authenticatedRoute('matches');
   this.authenticatedRoute('projects');
   this.authenticatedRoute('critiques');
-  this.route('login');
+  this.authenticatedRoute('matches');
 });
 
 export default Router;
