@@ -22,10 +22,12 @@ export default Ember.Route.extend({
               if (user != null) {
                 console.log( user.uid);
                 this.set('sessionData.userID', user.uid);
+                this.set('sessionData.email', email);
+                console.log( this.get('sessionData.userID'));
               }
 
                //this.transitionTo(path);
-               this.transitionTo('matches');
+               //this.transitionTo('matches');
            }.bind(this));
        },
        logout: function() {

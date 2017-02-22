@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   userID: DS.attr('string'),
+  email: DS.attr('string'),
   manuscriptPath: DS.attr('string'),
   previewPath: DS.attr('string'),
   datePosted: DS.attr('date'),

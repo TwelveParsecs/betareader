@@ -9,6 +9,7 @@ export default Ember.Route.extend({
       createProject() {
          const controller = this.get("controller");
          const userID = this.get('sessionData.userID');
+         const email = this.get('sessionData.email');
          const manuscriptPath = '';//controller.get('manuscriptPath');
          const previewPath = '';//controller.get('previewPath');
          const title = controller.get('title');
