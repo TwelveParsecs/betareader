@@ -11,7 +11,6 @@ export default Ember.Controller.extend({
       },
 
       setTags(value){
-        
         this.set('tags',value);
       },
     }
