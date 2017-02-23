@@ -10,14 +10,10 @@ export default Ember.Route.extend({
     var userData = this.store.findRecord('user',user);
 
     this.store.query('project', {
-      filter: {
-        userID: user
-      }
+      orderBy: 'userID', equalTo: user
     }).then(function(results){
       results.forEach(function(result){
-        if (result.get("userID")==user){
           console.log(result.get("title"));
-        }
       })
     });
 

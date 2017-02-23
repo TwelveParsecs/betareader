@@ -10,24 +10,23 @@ export default Ember.Route.extend({
          //var path = controller.get('path');
          var email = controller.get('email');
          var password = controller.get('password');
+         var _this = this;
 
            this.get('session').open('firebase', {
                 provider: 'password',
                 email: email,
                 password: password
            }).then(function() {
-              // Store userID with ember-local-storage
-              var user = this.get('firebaseApp').auth().currentUser;
+             this.get('sessionData').reset();// Clear data from previous session
 
-              if (user != null) {
-                console.log( user.uid);
-                this.set('sessionData.userID', user.uid);
-                this.set('sessionData.email', email);
-                console.log( this.get('sessionData.userID'));
-              }
+             // Get current user
+             this.get('firebaseApp').auth().onAuthStateChanged(function(user){
+                   _this.set('sessionData.userID', user.uid);
+                   _this.transitionTo('matches');
 
-               //this.transitionTo(path);
-               //this.transitionTo('matches');
+                  console.log(user.uid);
+                  //this.set('sessionData.email', email);
+              })
            }.bind(this));
        },
        logout: function() {
