@@ -34,6 +34,7 @@ export default Ember.Route.extend({
           wordsInManuscript: wordsInManuscript,
           ageLimit: ageLimit,
           lookingFor: lookingFor,
+          tags:tags.join(' '),
           matureContent: matureContent,
         });
 

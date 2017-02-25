@@ -7,18 +7,22 @@ export default Ember.Route.extend({
   model(){
     let projects = [];
     let user = this.get("sessionData.userID");
+    let name = this.get("sessionData.name");
+    let _this = this;
     console.log(user);
     // Get user information
-    var userData = this.store.findRecord('user',user);
+
 
     return this.store.query('project', {
       orderBy: 'userID', equalTo: user
     }).then(function(results){
       results.forEach(function(result){
           // Add results to an array with user data
+          console.log(result.get('id'));
+
           projects.push({
             title: result.get("title"),
-            author: userData.name,
+            author: name,
             description: result.get("description"),
           });
       })

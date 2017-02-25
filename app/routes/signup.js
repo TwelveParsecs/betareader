@@ -1,9 +1,12 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
   firebaseApp: Ember.inject.service(),
+  sessionData: storageFor('session-data'),
   actions: {
     signUp() {
+
       const controller = this.get("controller");
       const email = controller.get('email');
       const password = controller.get('password');
@@ -55,17 +58,17 @@ export default Ember.Route.extend({
             user.save().then(function(){
               console.log("data stored");
 
-              this.get('sessionData').reset();// Clear data from previous session
+              _this.get('sessionData').reset();// Clear data from previous session
 
-              // Get current user
-              this.get('firebaseApp').auth().onAuthStateChanged(function(user){
+              //Get current user
+              _this.get('firebaseApp').auth().onAuthStateChanged(function(user){
                     _this.set('sessionData.userID', user.uid);
                     _this.set('sessionData.name', name);
                     _this.transitionTo('matches');
 
                    console.log(user.uid);
                    //this.set('sessionData.email', email);
-               })
+               });
             });
           });
         }).catch((error) => {
