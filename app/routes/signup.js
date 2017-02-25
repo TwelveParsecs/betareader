@@ -54,7 +54,18 @@ export default Ember.Route.extend({
 
             user.save().then(function(){
               console.log("data stored");
-            //_this.transitionTo('matches');
+
+              this.get('sessionData').reset();// Clear data from previous session
+
+              // Get current user
+              this.get('firebaseApp').auth().onAuthStateChanged(function(user){
+                    _this.set('sessionData.userID', user.uid);
+                    _this.set('sessionData.name', name);
+                    _this.transitionTo('matches');
+
+                   console.log(user.uid);
+                   //this.set('sessionData.email', email);
+               })
             });
           });
         }).catch((error) => {

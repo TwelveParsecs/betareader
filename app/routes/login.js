@@ -19,14 +19,22 @@ export default Ember.Route.extend({
            }).then(function() {
              this.get('sessionData').reset();// Clear data from previous session
 
-             // Get current user
+             // Get current user id
              this.get('firebaseApp').auth().onAuthStateChanged(function(user){
-                   _this.set('sessionData.userID', user.uid);
-                   _this.transitionTo('matches');
-
-                  console.log(user.uid);
-                  //this.set('sessionData.email', email);
-              })
+                 _this.set('sessionData.userID', user.uid);
+                 let userID = user.uid;
+                 console.log(userID);
+                 // Get user profile data
+                 _this.store.query('user',{
+                  //  orderBy:"id",
+                   equalTo:userID,
+                   limitToFirst:1,
+                   }).then(function(userData){
+                     console.log(userData.objectAt(0).get("name"));
+                     _this.set('sessionData.name', userData.objectAt(0).get("name"));
+                     _this.transitionTo('matches');
+                   });
+              });
            }.bind(this));
        },
        logout: function() {

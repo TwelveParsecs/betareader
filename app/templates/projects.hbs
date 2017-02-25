@@ -1,12 +1,16 @@
 {{partial 'navbar'}}
 
  <h1>Projects</h1>
- {{#each project as |story|}}
+ {{#each model as |story|}}
+ <div>
    <h3>{{story.title}}</h3>
    <h4>{{story.author}}</h4>
    <div>{{story.description}}</div>
-   <div>{{story.tags}}</div>
+   <!--<div>story.tags</div>-->
    <div>Read More</div>
+  </div>
+  {{else}}
+  Nothing happened
   {{/each}}
 
 {{outlet}}

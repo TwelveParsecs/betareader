@@ -3,21 +3,27 @@ import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
   sessionData: storageFor('session-data'),
-  beforeModel: function(){
+
+  model(){
+    let projects = [];
     let user = this.get("sessionData.userID");
     console.log(user);
     // Get user information
     var userData = this.store.findRecord('user',user);
 
-    this.store.query('project', {
+    return this.store.query('project', {
       orderBy: 'userID', equalTo: user
     }).then(function(results){
       results.forEach(function(result){
-          console.log(result.get("title"));
+          // Add results to an array with user data
+          projects.push({
+            title: result.get("title"),
+            author: userData.name,
+            description: result.get("description"),
+          });
       })
-    });
 
-  },
-  actions: {
+      return projects;
+    })
   }
 });
