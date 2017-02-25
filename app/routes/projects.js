@@ -21,9 +21,11 @@ export default Ember.Route.extend({
           console.log(result.get('id'));
 
           projects.push({
+            id: result.get("id"),
             title: result.get("title"),
             author: name,
             description: result.get("description"),
+            tags:result.get("tags")
           });
       })
 

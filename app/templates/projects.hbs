@@ -1,13 +1,14 @@
 {{partial 'navbar'}}
-
+{{#link-to "newproject" }} Create a new project{{/link-to}}
  <h1>Projects</h1>
  {{#each model as |story|}}
  <div>
    <h3>{{story.title}}</h3>
    <h4>{{story.author}}</h4>
    <div>{{story.description}}</div>
-   <!--<div>story.tags</div>-->
-   <div>Read More</div>
+   <div>{{story.tags}}</div>
+
+   {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
   </div>
   {{else}}
   Nothing happened

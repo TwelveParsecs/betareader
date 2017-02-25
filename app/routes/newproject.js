@@ -50,6 +50,8 @@ export default Ember.Route.extend({
 
               tag.save();
             }
+
+            _this.transitionTo('matches');
           });
       }
   }
