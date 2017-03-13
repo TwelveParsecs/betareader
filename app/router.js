@@ -15,7 +15,8 @@ Router.map(function() {
   this.authenticatedRoute('critiques');
   this.authenticatedRoute('matches');
   this.authenticatedRoute('projects');
-  this.route('critique');
+  this.authenticatedRoute('critique');
+  this.authenticatedRoute('generate');
 });
 
 export default Router;

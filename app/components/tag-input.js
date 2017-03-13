@@ -5,7 +5,7 @@ export default Ember.Component.extend({
       splitTags(input){
         console.log("called");
         console.log(input);
-        var tags = input.split(' ');
+        var tags = input.split(',');
         this.sendAction( 'sendOptions',tags );
       }
     }

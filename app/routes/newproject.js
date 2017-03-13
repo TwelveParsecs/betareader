@@ -17,7 +17,7 @@ export default Ember.Route.extend({
          const critiqueInstructions = controller.get('critiqueInstructions');
          const wordsInPreview = controller.get('wordsInPreview');
          const wordsInManuscript = controller.get('wordsInManuscript');
-         const ageLimit = controller.get('wordsInPreview');
+         const ageLimit = controller.get('ageLimit');
          const lookingFor = controller.get('lookingFor');
          const tags = controller.get('tags');
          const matureContent = controller.get('matureContent');
@@ -25,6 +25,7 @@ export default Ember.Route.extend({
         // Create new project
         var project = this.store.createRecord('project', {
           userID: userID,
+          email: email,
           manuscriptPath: manuscriptPath,
           previewPath: previewPath,
           title: title,
@@ -34,7 +35,6 @@ export default Ember.Route.extend({
           wordsInManuscript: wordsInManuscript,
           ageLimit: ageLimit,
           lookingFor: lookingFor,
-          tags:tags.join(' '),
           matureContent: matureContent,
         });
 
@@ -50,8 +50,6 @@ export default Ember.Route.extend({
 
               tag.save();
             }
-
-            _this.transitionTo('matches');
           });
       }
   }

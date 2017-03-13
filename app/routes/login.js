@@ -32,6 +32,7 @@ export default Ember.Route.extend({
                    }).then(function(userData){
                      console.log(userData.objectAt(0).get("name"));
                      _this.set('sessionData.name', userData.objectAt(0).get("name"));
+                     _this.set('sessionData.reads', userData.objectAt(0).get("genresRead"));
                      _this.transitionTo('matches');
                    });
               });
