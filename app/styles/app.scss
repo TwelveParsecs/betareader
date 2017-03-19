@@ -1,0 +1,29 @@
+@import "reset";
+@import "fonts";
+@import "nav";
+
+$bodyFont : "Lato", Helvetica, Arial;
+$displayFont : "aleobold";
+$browser-context: 16px;
+$textColor: #4A4A4A;
+
+html{
+  font-size: $browser-context;
+}
+
+body{
+  font-family: $bodyFont;
+  font-weight: 400;
+  //font-size: 1.25em;
+  line-height: 2.063em;
+}
+
+h2 {
+  font-family: $displayFont;
+  font-size: 2.25em;
+}
+
+h3 {
+  font-family: $displayFont;
+  font-size: 1.375em;
+}

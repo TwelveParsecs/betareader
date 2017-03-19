@@ -1,12 +1,15 @@
 {{partial 'navbar'}}
-
- <h1>Matches</h1>
  {{#each model as |story|}}
  <div>
-   <h3>{{story.title}}</h3>
-   <h4>{{story.author}}</h4>
-   <div>{{story.description}}</div>
+   <h3>{{story.pagesInManuscript}}</h3>
+   <h2>{{story.title}}</h2>
+   <h3>{{story.author}}</h3>
+   <div>{{story.date}}</div>
    <div>{{story.tags}}</div>
+   <div>{{story.pagesInManuscript}}</div>
+
+   <div>{{story.description}}</div>
+   <div>{{story.instructions}}</div>
 
    {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
   </div>
