@@ -1,5 +1,14 @@
 <nav>
   <div id="nav-content">
+    <img src="assets/img/logoFull.svg" id="logo"/>
+
+    <img src="assets/img/profilePic.svg" id="profile-pic"/>
+
+    <div id="icon-block">
+      <img src="assets/img/notifications.svg" class="nav-icons"/>
+      <img src="assets/img/messageIcon.svg" class="nav-icons"/>
+    </div>
+
     <ul>
       <li>
         {{#link-to "matches" }} Matches{{/link-to}}
@@ -15,4 +24,9 @@
       </li>
     </ul>
   </div>
+
+  <script >
+    var route = this.controllerFor('application').get('currentRouteName');
+    console.log(route);
+  </script>
 </nav>

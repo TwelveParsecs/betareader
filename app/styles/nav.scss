@@ -6,7 +6,16 @@ nav {
   height:70px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.09);
+
   #nav-content{
+    max-width: 1440px;
+    margin: 0 auto;
+
+    #logo{
+      padding-top: 15px;
+      padding-left:20px;
+    }
+
     ul{
       float:right;
       padding-top: 20px;
@@ -14,7 +23,7 @@ nav {
 
       li {
         display: inline-block;
-        margin-left: 20px;
+        margin-left: 30px;
       }
     }
 
@@ -25,5 +34,28 @@ nav {
       font-size: 1em;
       letter-spacing: 0.03em;
     }
+
+    #icon-block{
+      margin:0 20px;
+      display: inline-block;
+      padding-top: 18px;
+      float:right;
+
+      .nav-icons{
+        margin-left:10px;
+      }
+    }
+
+    #profile-pic{
+      padding-top: 18px;
+      padding-right:20px;
+      float:right;
+      display: inline-block;
+
+    }
   }
+}
+
+.currentPage{
+  color:$textColor;
 }
