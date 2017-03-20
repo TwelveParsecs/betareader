@@ -1,18 +1,29 @@
 {{partial 'navbar'}}
- {{#each model as |story|}}
- <div>
-   <h3>{{story.pagesInManuscript}}</h3>
-   <h2>{{story.title}}</h2>
-   <h3>{{story.author}}</h3>
-   <div>{{story.date}}</div>
-   <div>{{story.tags}}</div>
-   <div>{{story.pagesInManuscript}}</div>
+<div id="content">
 
-   <div>{{story.description}}</div>
-   <div>{{story.instructions}}</div>
+   {{#each model as |story|}}
+   <div class="match-card">
 
-   {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
-  </div>
-{{else}}
-  Nothing happened
-{{/each}}
+     <div class="column-left">
+       <div class="type">Series</div>
+       <h3>{{story.author}}</h3>
+       <div>{{story.date}}</div>
+       <div>{{story.tags}}</div>
+       <h3>{{story.pagesInManuscript}}</h3>
+       <div>{{story.pagesInManuscript}}</div>
+     </div>
+
+     <div class="column-right">
+       <h2>{{story.title}}</h2>
+       <div class="body-text">{{story.description}}</div>
+       <div class="body-text">{{story.instructions}}</div>
+        {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
+     </div>
+
+
+
+    </div>
+  {{else}}
+    No matches found
+  {{/each}}
+</div>
