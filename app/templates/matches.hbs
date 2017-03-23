@@ -1,23 +1,35 @@
-{{partial 'navbar'}}
+{{render 'navbar'}}
 <div id="content">
 
    {{#each model as |story|}}
    <div class="match-card">
 
-     <div class="column-left">
-       <div class="type">Series</div>
-       <h3>{{story.author}}</h3>
-       <div>{{story.date}}</div>
-       <div>{{story.tags}}</div>
-       <h3>{{story.pagesInManuscript}}</h3>
-       <div>{{story.pagesInManuscript}}</div>
+     <div class="top-row">
+       <div class="column-left">
+         <div class="type">Series</div>
+       </div>
+
+       <div class="column-right">
+         <h2 class="story-title">{{story.title}}</h2>
+       </div>
      </div>
 
-     <div class="column-right">
-       <h2>{{story.title}}</h2>
-       <div class="body-text">{{story.description}}</div>
-       <div class="body-text">{{story.instructions}}</div>
-        {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
+     <div class="bottom-row">
+       <div class="column-left">
+         <h3>{{story.author}}</h3>
+         <div>{{story.date}}</div>
+         <div>{{story.tags}}</div>
+         <h3>{{story.pagesInManuscript}}</h3>
+         <div>{{story.pagesInManuscript}}</div>
+       </div>
+
+       <div class="column-right">
+         <div class="body-text">{{story.description}}</div>
+         <h3> Instructions</h3>
+         <div class="body-text">{{story.instructions}}</div>
+          {{#link-to "critique" (query-params id=story.id)}}Read More{{/link-to}}
+       </div>
+
      </div>
 
 

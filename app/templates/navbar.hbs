@@ -1,6 +1,9 @@
 <nav>
   <div id="nav-content">
-    {{#link-to "matches" }} <img src="assets/img/logoFull.svg" id="logo"/>{{/link-to}}
+    {{#link-to "matches" }}
+      <img src="assets/img/logoFull.svg" id="logo"/>
+      <img src="assets/img/logo.svg" id="logo-partial"/>
+    {{/link-to}}
 
     <img src="assets/img/profilePic.svg" id="profile-pic"/>
 
@@ -10,23 +13,22 @@
     </div>
 
     <ul>
-      <li>
-        {{#link-to "matches" }} Matches{{/link-to}}
+      <li class='{{if matches "currentPage"}}' {{action 'changeUnderline'}}>
+        {{#link-to "matches" id="matches-link"}} Matches{{/link-to}}
       </li>
-      <li>
-        {{#link-to "projects" }} Add a Novel{{/link-to}}
+      <li class='{{if projects "currentPage"}}' {{action 'changeUnderline'}}>
+        {{#link-to "newproject" id="newproject-link"}} Add a Novel{{/link-to}}
       </li>
-      <li>
+      <li id="my-novels-link">
         {{#link-to "projects" }} My Novels{{/link-to}}
       </li>
-      <li>
+      <li id="critiques-link">
         {{#link-to "critiques" }} Critiques{{/link-to}}
       </li>
     </ul>
   </div>
 
   <script >
-    var route = this.controllerFor('application').get('currentRouteName');
-    console.log(route);
+
   </script>
 </nav>

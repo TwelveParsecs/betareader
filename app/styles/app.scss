@@ -1,11 +1,12 @@
 @import "reset";
 @import "fonts";
 @import "nav";
-@import "matches";
 
 $bodyFont : "Lato", Helvetica, Arial;
 $displayFont : "aleobold";
+
 $browser-context: 16px;
+
 $textColor: #4A4A4A;
 
 html{
@@ -17,9 +18,7 @@ body{
   font-weight: 400;
   //font-size: 1.25em;
   line-height: 2.063em;
-  background-image: url("img/pattern.png");
-  background-repeat: repeat;
-  background-position: center top;
+
 }
 
 h2 {
@@ -30,13 +29,4 @@ h2 {
 h3 {
   font-family: $displayFont;
   font-size: 1.375em;
-}
-
-#content{
-  max-width: 1040px;
-  margin: 120px auto 0 auto;
-}
-
-.body-text{
-  font-size: 1.25em;
 }
