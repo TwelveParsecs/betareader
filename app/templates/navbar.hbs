@@ -13,10 +13,10 @@
     </div>
 
     <ul>
-      <li class='{{if matches "currentPage"}}' {{action 'changeUnderline'}}>
+      <li id="matches-link">
         {{#link-to "matches" id="matches-link"}} Matches{{/link-to}}
       </li>
-      <li class='{{if projects "currentPage"}}' {{action 'changeUnderline'}}>
+      <li id="newproject-link">
         {{#link-to "newproject" id="newproject-link"}} Add a Novel{{/link-to}}
       </li>
       <li id="my-novels-link">

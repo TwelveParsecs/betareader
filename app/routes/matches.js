@@ -24,7 +24,6 @@ export default Ember.Route.extend({
     return promise = new Ember.RSVP.Promise(function(resolve, reject) {
       // Find tags that match what the reader reads
       for (let i = 0; i < readTags.length; i ++){
-        console.log(readTags[i])
            _this.store.query('tags', {
             orderBy:"name",
             equalTo: readTags[i]
@@ -32,7 +31,6 @@ export default Ember.Route.extend({
 
               results.forEach(function(result){
                   count += 1;
-                  console.log(count + " ," + result.get("projectID")+" tag:" + result.get("name"));
                   // Add each tag result to array if that project id does not already exist
 
                   if (!writeTags.includes(result.get("projectID"))){
@@ -43,7 +41,6 @@ export default Ember.Route.extend({
                     _this.store.query('project', {
                       equalTo: result.get("projectID")
                     }).then(function(projectResults){
-                        console.log("called");
                        projectResults.forEach(function(projectResult){
 
                           projects.push({
@@ -62,7 +59,7 @@ export default Ember.Route.extend({
 
                       //Resolve promise with array of projects
 
-                      console.log("id: " + result.get("projectID") + ", tag: " + result.get("name"));
+                      //console.log("id: " + result.get("projectID") + ", tag: " + result.get("name"));
                     resolve(projects);
                   });
                 }

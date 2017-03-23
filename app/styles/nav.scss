@@ -35,16 +35,24 @@ nav {
       li {
         display: table-cell;
         text-align: center;
+
+        a{
+          color:$inactiveColor;
+          text-decoration: none;
+          font-weight:900;
+          font-size: 0.75em;
+          letter-spacing: 0.03em;
+        }
+
+        .active{
+          padding-bottom: 8px;
+          border-bottom : 3px solid $orange;
+          color:$textColor;
+        }
+
       }
     }
 
-    a{
-      color:$inactiveColor;
-      text-decoration: none;
-      font-weight:900;
-      font-size: 0.75em;
-      letter-spacing: 0.03em;
-    }
 
     #icon-block{
       margin:0 15px 0 20px;
@@ -70,17 +78,11 @@ nav {
   }
 }
 
-.currentPage{
-  border-bottom : 2px solid $orange;
-  #matches-link, #newproject-link{
-      color:$textColor;
-  }
-}
 
 
 
 
-@media (min-width:580px){
+@media (min-width:600px){
 
  nav {
    height:70px;
@@ -110,6 +112,12 @@ nav {
          display: inline-block;
          margin-left: 30px;
          text-align: left;
+
+         .active{
+           padding-bottom: 5px;
+           border-bottom : 2px solid $orange;
+           color:$textColor;
+         }
       }
     }
 
