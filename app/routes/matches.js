@@ -51,7 +51,7 @@ export default Ember.Route.extend({
                             date: formatDate(projectResult.get("datePosted")),
                             pagesInManuscript: projectResult.get("pagesInManuscript"),
                             description: projectResult.get("description"),
-                            instructions: projectResult.get("pagesInManuscript"),
+                            instructions: projectResult.get("critiqueInstructions"),
                             tags: projectResult.get("tags")
                           });
 
