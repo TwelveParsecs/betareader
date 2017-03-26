@@ -2,48 +2,17 @@
 <div id="content">
 
    {{#each model as |story|}}
-   <div class="match-card">
-
-     <div class="top-row">
-       <div class="column-left">
-         <div class="type">Series</div>
-       </div>
-
-       <div class="column-right">
-         <h2 class="story-title">{{story.title}}</h2>
-       </div>
-     </div>
-
-     <div class="bottom-row">
-       <div class="column-left author-full-block">
-         <img src="assets/img/profilePic.svg" class="author-pic"/>
-
-         <div class="author-block">
-           <h3 class="author-name">{{story.author}}</h3>
-           <div class="post-date">{{story.date}}</div>
-           <div class="pages">{{story.pagesInManuscript}} pages  &#183;   {{story.numberOfReaders}} beta readers</div>
-         </div>
-       </div>
-
-       <div class="column-right">
-         <div class="body-text">{{story.descriptionPart}}<span class="full-description">{{story.descriptionFull}}</span></div>
-         <h3> Instructions</h3>
-         <div class="body-text">{{story.instructions}}</div>
-          <div class="read-more"> Read More </div>
-          <div class="story-tags">{{story.tags}}</div>
-          <div class="bottom-icons">
-            <img src="assets/img/addIcon.svg" class="icon"/>
-            <img src="assets/img/tradeIcon.svg" class="icon"/>
-            <img src="assets/img/downloadIcon.svg" class="icon"/>
-          </div>
-       </div>
-     </div>
-    </div>
+   {{match-card
+     title=story.title
+     author=story.author
+     date=story.date
+     pagesInManuscript=story.pagesInManuscript
+     numberOfReaders=story.numberOfReaders
+     descriptionPart=story.descriptionPart
+     descriptionFull=story.descriptionFull
+     instructions=story.instructions
+     tags=story.tags}}
   {{else}}
     No matches found
   {{/each}}
 </div>
-
-<script>
-  $("#matches-link").toggleClass(".currentPage");
-</script>

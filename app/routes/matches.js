@@ -42,7 +42,19 @@ export default Ember.Route.extend({
                       equalTo: result.get("projectID")
                     }).then(function(projectResults){
                        projectResults.forEach(function(projectResult){
-                  
+                         // Divide description into parts
+                         let descriptionPart = "";
+                         let descriptionFull = "";
+                         let partLength = 200; // Number of characters in description size before read more is clicked
+
+                         if (projectResult.get("description").length > partLength){
+                           descriptionPart = projectResult.get("description").substring(0,partLength);
+                           descriptionFull = projectResult.get("description").substring(partLength+1,projectResult.get("description").length)
+                         }
+                         else {
+                           descriptionPart = projectResult.get("description");
+                         }
+
 
                           projects.push({
                             id: projectResult.get("id"),
@@ -52,7 +64,8 @@ export default Ember.Route.extend({
                             date: formatDate(projectResult.get("datePosted")),
                             pagesInManuscript: "400",//projectResult.get("pagesInManuscript"),
                             numberOfReaders: "2",
-                            description: projectResult.get("description"),
+                            descriptionPart: descriptionPart,
+                            descriptionFull: descriptionFull,
                             instructions: projectResult.get("critiqueInstructions"),
                             tags: projectResult.get("tags").replace(/,/g,"  ")
                           });
