@@ -42,17 +42,19 @@ export default Ember.Route.extend({
                       equalTo: result.get("projectID")
                     }).then(function(projectResults){
                        projectResults.forEach(function(projectResult){
+                  
 
                           projects.push({
                             id: projectResult.get("id"),
                             title: projectResult.get("title"),
                             novelType: projectResult.get("novelType"),
-                            author: "Name",
+                            author: "Author Name",
                             date: formatDate(projectResult.get("datePosted")),
-                            pagesInManuscript: projectResult.get("pagesInManuscript"),
+                            pagesInManuscript: "400",//projectResult.get("pagesInManuscript"),
+                            numberOfReaders: "2",
                             description: projectResult.get("description"),
                             instructions: projectResult.get("critiqueInstructions"),
-                            tags: projectResult.get("tags")
+                            tags: projectResult.get("tags").replace(/,/g,"  ")
                           });
 
                       });
