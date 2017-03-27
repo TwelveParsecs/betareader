@@ -2,6 +2,7 @@
 @import "fonts";
 @import "nav";
 @import "matches";
+@import "signup";
 
 $bodyFont : "Lato", Helvetica, Arial;
 $displayFont : "aleobold";
@@ -19,6 +20,7 @@ body{
   font-weight: 400;
   //font-size: 1.25em;
   line-height: 2.063em;
+  color:#4A4A4A;
 
 }
 

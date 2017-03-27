@@ -39,61 +39,12 @@ export default Ember.Controller.extend({
 
   // Send form
   actions: {
-    //firebaseApp: Ember.inject.service(),
-    //signUp() {
-      // const email = this.get('email');
-      // const password = this.get('password');
-      // const name = this.get('name');
-      // const birthday = new Date(parseInt(this.get('year')),parseInt(this.get('month')),parseInt(this.get('day')));
-      // const education = this.get('education');
-      // const novelLength = this.get('novelLength');
-      // const genresRead = this.get('genresRead');
-      // const readFreq = this.get('readFreq');
-      // const writes = (this.get('writes') === '1'); // Convert string to boolean
-      // const genresWrite = this.get('genresWrite');
-      // const yearsWriting = this.get('yearsWriting');
-      // const draftCompletion = this.get('draftCompletion');
-      // const published = (this.get('published') === '1'); // Convert string to boolean
-      // const experience = this.get('experience');
-      // const hoursCritique = this.get('hoursCritique');
-      // const description = this.get('description');
-
-      // Authentication
-      // var ref = this.get('firebaseApp').auth();
-      // var _this = this;
-
-      // Create new account
-      // ref.createUserWithEmailAndPassword(email, password).then((userResponse) => {
-      // const user = this.store.createRecord('user', {
-      //   id: userResponse.uid,
-      //   email: userResponse.email
-      // console.log("user created");
-      // });
-      //return user.save();
-
-      //
-      // var newUser = this.store.createRecord('user', {
-      //   id: userData.uid,
-      //   name: name,
-      //   birthday: birthday,
-      //   education: education,
-      //   novelLength: novelLength,
-      //   genresRead: genresRead,
-      //   readFreq : readFreq,
-      //   writes: writes,
-      //   genresWrite: genresWrite,
-      //   yearsWriting: yearsWriting,
-      //   draft_completion: draftCompletion,
-      //   published: published,
-      //   experience: experience,
-      //   hoursCritique: hoursCritique,
-      //   description: description,
-      // });
-      // newUser.save().then((response) => {
-      //   console.log("sent!");
-      //   this.set('responseMessage', `Thank you! We saved your data with the following id: ${response.get('id')}`);
-      // });
-    //},
+    nextBlock(currentBlock){
+      let next = parseInt(currentBlock) + 1;
+      console.log(next);
+      Ember.$("#signup"+currentBlock).fadeToggle(".hidden");
+      Ember.$("#signup"+next).fadeToggle(".hidden");
+    },
 
     setEducation(value){
       this.set('education',value);

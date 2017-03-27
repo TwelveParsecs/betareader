@@ -1,0 +1,50 @@
+$orange: #FF8A65;
+$grey: #979797;
+
+label{
+  display:block;
+}
+
+input{
+  border-radius: 3px;
+  border:1px solid $grey;
+  padding:10px;
+  font-size: 1em;
+  display:block;
+  margin-bottom:10px;
+  width:100%;
+  max-width: 340px;
+}
+
+.hidden{
+  display:none;
+}
+
+form{
+  width:100%;
+  background-image: url("img/pattern.png");
+  background-repeat: repeat;
+  height:100%;
+  position:absolute;
+}
+
+.next-button{
+  font-family: aleoregular;
+  color:#fff;
+  text-align: center;
+  background-color: $orange;
+  border-radius: 3px;
+  border:1px solid $orange;
+  margin-top:20px;
+  width:100%;
+  max-width: 340px;
+  padding:2px 10px;
+  cursor:pointer;
+}
+
+.input-block{
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,-50%);
+  top:40%;
+}

@@ -45,7 +45,7 @@ export default Ember.Route.extend({
                          // Divide description into parts
                          let descriptionPart = "";
                          let descriptionFull = "";
-                         let partLength = 200; // Number of characters in description size before read more is clicked
+                         let partLength = 300; // Number of characters in description size before read more is clicked
 
                          if (projectResult.get("description").length > partLength){
                            descriptionPart = projectResult.get("description").substring(0,partLength);

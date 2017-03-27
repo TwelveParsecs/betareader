@@ -3,10 +3,11 @@ $displayFontItalic : "aleoitalic";
 
 #content{
   width:100%;
-  margin-top: 85px;
+  margin-top: 65px;
   background-image: url("img/pattern.png");
   background-repeat: repeat;
-  padding-top: 20px;
+  padding-top: 40px;
+  height:100%;
 }
 
 .match-card{
@@ -80,7 +81,7 @@ $displayFontItalic : "aleoitalic";
 
 .story-tags{
   font-family: $displayFontItalic;
-  font-size: 0.75em;
+  font-size: 0.875em;
 
 }
 
@@ -90,9 +91,13 @@ $displayFontItalic : "aleoitalic";
   margin:10px 0 15px auto;
   height:25px;
   .icon{
-    height:25px;
+    height:23px;
     margin-left: 10px;
   }
+}
+
+.read-more{
+  font-weight:900;
 }
 
 .hidden{
@@ -112,47 +117,112 @@ $displayFontItalic : "aleoitalic";
   cursor:pointer;
 }
 
+@media (min-width:650px){
+  .match-card{
+    width:600px;
+    margin:20px auto;
+    padding: 10px 20px;
+  }
+}
 
+@media (min-width:1000px){
 
+  .match-card{
+    width:auto;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+    border-radius: 3px;
+    padding:20px;
+    margin-bottom: 40px;
 
-/* Rectangle 3 Copy 12: */
-// .match-card{
-//   background: #FFFFFF;
-//   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-//   border-radius: 3px;
-//   padding:20px;
-//   margin-bottom: 40px;
-//
-// }
-//
-// .top-row{
-//   display: flex;
-//   flex-direction: row;
-//   margin-bottom:60px;
-// }
-//
-// .bottom-row{
-//   display: flex;
-//   flex-direction: row;
-// }
-//
-// .column-left{
-//   width:160px;
-//   display: inline-block;
-//   padding-right: 10px;
-//   font-size: 1em;
-// }
-//
-// .column-right{
-//   min-width:160px;
-//   display: inline-block;
-//   padding: 0 20px;
-// }
-//
-// .story-title{
-//
-// }
-//
-// .type{
-//
-// }
+  }
+
+  .top-row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom:60px;
+  }
+
+  .bottom-row{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .column-left{
+    width:160px;
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 1em;
+  }
+
+  .column-right{
+    min-width:160px;
+    display: inline-block;
+    padding: 0 20px;
+  }
+
+  .type{
+    margin-top: 10px;
+    margin-bottom:20px;
+    font-size: 0.875em;
+  }
+
+  .story-title{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+
+  }
+
+  .author-pic{
+    display:inline-block;
+    height:50px;
+  }
+
+  .author-full-block{
+    margin-bottom:10px;
+  }
+
+  .author-block{
+    margin-left: 10px;
+    display:inline-block;
+
+    .author-name{
+      color:$orange;
+      margin: 0;
+      padding:0;
+      font-size: 1.125em;
+      display:inline-block;
+      line-height: 1em
+    }
+
+    .post-date{
+      font-size: 0.75em;
+      line-height: 1.7em;
+      margin-top:-5px;
+    }
+
+    .pages{
+      font-size: 0.625em;
+      line-height: normal;
+    }
+  }
+
+  .column-left{
+    position:relative;
+  }
+
+  .bottom-row{
+    position:relative;
+    padding-bottom:50px;
+  }
+
+  .body-text{
+    margin-bottom:10px;
+  }
+
+  .story-tags{
+    font-family: $displayFontItalic;
+    font-size: 0.875em;
+
+  }
+}
