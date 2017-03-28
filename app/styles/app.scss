@@ -13,6 +13,7 @@ $textColor: #4A4A4A;
 
 html{
   font-size: $browser-context;
+  height:100%;
 }
 
 body{
@@ -21,7 +22,6 @@ body{
   //font-size: 1.25em;
   line-height: 2.063em;
   color:#4A4A4A;
-
 }
 
 h2 {

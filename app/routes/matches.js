@@ -45,7 +45,7 @@ export default Ember.Route.extend({
                          // Divide description into parts
                          let descriptionPart = "";
                          let descriptionFull = "";
-                         let partLength = 300; // Number of characters in description size before read more is clicked
+                         let partLength = 400; // Number of characters in description size before read more is clicked
 
                          if (projectResult.get("description").length > partLength){
                            descriptionPart = projectResult.get("description").substring(0,partLength);
@@ -55,6 +55,7 @@ export default Ember.Route.extend({
                            descriptionPart = projectResult.get("description");
                          }
 
+                         console.log(projectResult.get("tags").split(","));
 
                           projects.push({
                             id: projectResult.get("id"),
@@ -67,7 +68,8 @@ export default Ember.Route.extend({
                             descriptionPart: descriptionPart,
                             descriptionFull: descriptionFull,
                             instructions: projectResult.get("critiqueInstructions"),
-                            tags: projectResult.get("tags").replace(/,/g,"  ")
+                            tags: projectResult.get("tags").replace(/,/g," "),
+                            tagsColumn: projectResult.get("tags").split(",")
                           });
 
                       });

@@ -18,14 +18,16 @@
         <div class="post-date">{{date}}</div>
         <div class="pages">{{pagesInManuscript}} pages  &#183;   {{numberOfReaders}} beta readers</div>
         <div class="large-info">
-          <div>
+          <div class="secondary-info">
             {{pagesInManuscript}} pages
           </div>
           <div>
             {{numberOfReaders}} beta readers
           </div>
-          <div>
-            {{tags}}
+          <div class="tag-column">
+            {{#each tagsColumn as |tag|}}
+              #{{tag}} <br />
+            {{/each}}
           </div>
         </div>
       </div>
@@ -34,9 +36,10 @@
 
     <div class="column-right">
       <div class="body-text">{{descriptionPart}}<span class="full-description hidden">{{descriptionFull}}</span></div>
-      <div class="hide-gradient"></div>
+
       <h3 class="hidden instructions-title"> Instructions</h3>
       <div class="body-text instructions hidden">{{instructions}}</div>
+      <div class="hide-gradient"></div>
        <div class="read-more" {{action "toggleMore" this}}> Read More&hellip; </div>
        <div class="story-tags">{{tags}}</div>
        <div class="bottom-icons">
