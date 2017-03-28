@@ -117,6 +117,10 @@ $displayFontItalic : "aleoitalic";
   cursor:pointer;
 }
 
+.large-info{
+  display: none;
+}
+
 @media (min-width:650px){
   .match-card{
     width:600px;
@@ -125,16 +129,12 @@ $displayFontItalic : "aleoitalic";
   }
 }
 
-@media (min-width:1000px){
+@media (min-width:800px){
 
   .match-card{
-    width:auto;
-    background: #FFFFFF;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-    border-radius: 3px;
+    max-width: 1040px;
+    width:calc(100% - 80px);
     padding:20px;
-    margin-bottom: 40px;
-
   }
 
   .top-row{
@@ -149,33 +149,35 @@ $displayFontItalic : "aleoitalic";
   }
 
   .column-left{
-    width:160px;
+    width:300px;
     display: inline-block;
     padding-right: 10px;
     font-size: 1em;
   }
 
   .column-right{
-    min-width:160px;
+    max-width:680px;
     display: inline-block;
     padding: 0 20px;
   }
 
   .type{
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom:20px;
     font-size: 0.875em;
   }
 
   .story-title{
-    font-size: 1.5em;
-    margin-bottom: 10px;
-
+    font-size: 2em;
+    margin:0 0 10px 0;
+    padding:0;
   }
 
   .author-pic{
+    vertical-align: text-top;
     display:inline-block;
     height:50px;
+    margin-right: 20px;
   }
 
   .author-full-block{
@@ -183,6 +185,7 @@ $displayFontItalic : "aleoitalic";
   }
 
   .author-block{
+    vertical-align: text-top;
     margin-left: 10px;
     display:inline-block;
 
@@ -190,20 +193,21 @@ $displayFontItalic : "aleoitalic";
       color:$orange;
       margin: 0;
       padding:0;
-      font-size: 1.125em;
+      font-size: 1.375em;
       display:inline-block;
-      line-height: 1em
     }
 
     .post-date{
-      font-size: 0.75em;
+      font-size: 1em;
       line-height: 1.7em;
       margin-top:-5px;
+
     }
 
     .pages{
       font-size: 0.625em;
       line-height: normal;
+      display: none;
     }
   }
 
@@ -223,6 +227,14 @@ $displayFontItalic : "aleoitalic";
   .story-tags{
     font-family: $displayFontItalic;
     font-size: 0.875em;
+    display: none;
+  }
 
+  .hide-gradient{
+    max-width:680px;
+  }
+
+  .large-info{
+    display: block;
   }
 }
