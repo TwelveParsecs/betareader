@@ -1,11 +1,88 @@
 {{#if session.isAuthenticated}}
   <button {{action 'logout'}}>Logout</button>
 {{else}}
-  <label for="email">Email</label>
-  {{input type="text" value=email id="email" placeholder="Email"}}
-  <label for="password">Password</label>
-  {{input type="password" value=password id="password" placeholder="password"}}
-  <button {{action "login"}}> Login </button>
-  Not a member? {{#link-to "signup" }} Sign up{{/link-to}}
+<nav id="login-nav">
+  {{#link-to "matches" }}
+    <img src="assets/img/logoFull.svg" id="logo"/>
+    <img src="assets/img/logo.svg" id="logo-partial"/>
+  {{/link-to}}
+    <div id="sign-in-block">
+      <div id="sign-in">
+        Sign In
+      </div>
+      or
+      {{#link-to "signup" id="nav-sign-up"}} Sign up {{/link-to}}
+    </div>
+</nav>
+
+  <div id="hero">
+    <div id="overlay"></div>
+    <h3 id="hero-tag">
+      Improve your writing with insightful feedback
+    </h3>
+    {{#link-to "signup" id="hero-sign-up" class="button" }} Sign up for Second Read{{/link-to}}
+  </div>
+
+  <div id="wrapper">
+    <div class="value-prop">
+      <img src="assets/img/trade.png"/>
+      <h4>Work with a reader on a short critique before you commit to an entire critique</h4>
+      <div>
+        It can be scary to hand your manuscript off to someone whom you’ve never met.
+        Second Read allows you to collaborate with your reader on a critique of an
+        excerpt of your story to get a feel for how the other person works and thinks.
+      </div>
+    </div>
+
+    <div class="value-prop">
+      <img src="assets/img/trade.png"/>
+      <h4>Get holistic critiques of your entire novel, not just a single chapter.</h4>
+      <div>
+        Single chapter critiques are limiting. How can you improve your character development
+        if the reader has only just been introduced to them? How do you know if your world
+        building is successful if your readers only have a few thousand words to go on?
+      </div>
+    </div>
+
+    <div class="value-prop">
+      <img src="assets/img/trade.png"/>
+      <h4>Build relationships beyond your current project</h4>
+      <div>
+        Meet and collaborate with readers and authors with similar interests and form
+        relationships that last beyond your current project.
+      </div>
+    </div>
+
+    <div class="value-prop">
+      <img src="assets/img/trade.png"/>
+      <h4>Match with people who read what you write</h4>
+      <div>
+        One of the most important qualities in a reader is that they understand the genre
+        that you’re writing. Readers are automatically matched with novels that match
+        their interests and experience.  Because they read what you write, they can
+        provide insightful feedback.
+      </div>
+    </div>
+
+    <div class="value-prop">
+      <img src="assets/img/trade.png"/>
+      <h4>Trade with other authors</h4>
+      <div>
+        Find other authors who are working on similar stories and improve your
+        writing skills reading their novel while they read yours.
+      </div>
+    </div>
+  </div>
+
+  <div id="login-bits">
+    <label for="email">Email</label>
+    {{input type="text" value=email id="email" placeholder="Email"}}
+    <label for="password">Password</label>
+    {{input type="password" value=password id="password" placeholder="password"}}
+    <button {{action "login"}}> Login </button>
+    Not a member? {{#link-to "signup" }} Sign up{{/link-to}}
+  </div>
+
+
 {{/if}}
 {{outlet}}
