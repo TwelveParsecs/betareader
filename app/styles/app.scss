@@ -20,6 +20,10 @@ html{
 body{
   font-family: $bodyFont;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
   //font-size: 1.25em;
   line-height: 2.063em;
   color:#4A4A4A;
