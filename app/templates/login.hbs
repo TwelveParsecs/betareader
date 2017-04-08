@@ -21,14 +21,14 @@
 
 <!-- Sign in modal -->
 {{#if isShowingModal}}
-  {{#modal-dialog close="toggleModal" target="#sign-in" translucentOverlay=false targetAttachment='left'}}
+{{#modal-dialog close="toggleModal" target="#sign-in" translucentOverlay=false targetAttachment='left'}}
     <div id="login-bits">
       <label for="email">Email</label>
       {{input type="text" value=email id="email" placeholder="Email"}}
       <label for="password">Password</label>
       {{input type="password" value=password id="password" placeholder="password"}}
-      <button {{action "login"}}> Login </button>
-      Not a member? {{#link-to "signup" }} Sign up{{/link-to}}
+      <button class="sign-in-button button-style" {{action "login"}}> Sign in </button>
+      <!-- Not a member? {/{#link-to "signup" }/} Sign up{/{/link-to}/} -->
     </div>
   {{/modal-dialog}}
 {{/if}}
@@ -42,7 +42,7 @@
     <div id="tag-line">
       Second Read helps writers find skilled beta readers and readers find engaging novels to critique.
     </div>
-    {{#link-to "signup" id="hero-sign-up" class="button" }} Sign up for Second Read{{/link-to}}
+    {{#link-to "signup" id="hero-sign-up" class="button button-style" }} Sign up for Second Read{{/link-to}}
 
 
   </div>

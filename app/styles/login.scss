@@ -16,7 +16,6 @@ $darkgrey: #4A4A4A;
   box-shadow: none;
 
   #logo{
-
     display: none;
   }
 
@@ -58,8 +57,16 @@ $darkgrey: #4A4A4A;
 
   #login-bits{
     width:100%;
+    label{
+      position: absolute;
+      z-index: -5;
+    }
 
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
     input{
+
       border-radius: 3px;
       border:1px solid $grey;
       padding:10px;
@@ -68,6 +75,7 @@ $darkgrey: #4A4A4A;
       margin-bottom:10px;
       width:calc(100% - 20px);
       max-width: 340px;
+      background-color: #fff;
     }
     input:focus{
       background-color: #fff;
@@ -81,14 +89,25 @@ $darkgrey: #4A4A4A;
 .ember-modal-overlay {
   height: 100vh;
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: 50;
 }
 .ember-modal-dialog {
+  background-image: url("img/pattern.png");
   z-index: 50;
-  position: fixed;
+  position: absolute;
+  margin-left: 120px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.29);
+
+  a:link{
+    color:$orange;
+  }
+
+  a:visited{
+    color:$orange;
+  }
 
   &.ember-modal-dialog-in-place {
     position: static;
@@ -133,13 +152,12 @@ $darkgrey: #4A4A4A;
   }
 }
 
-.button{
+
+
+.button-style{
   z-index: 5;
-  position: absolute;
-  bottom:15%;
-  left:50%;
   text-decoration: none;
-  //font-family: aleoregular;
+  font-family: aleoregular;
   color:#fff;
   font-weight: 600;
   text-align: center;
@@ -147,11 +165,45 @@ $darkgrey: #4A4A4A;
   background-color: $orange;
   border-radius: 3px;
   border:1px solid $orange;
+  padding:10px 10px;
+  cursor:pointer;
+  //box-shadow: 0 2px 4px rgba(0,0,0,0.29);
+  border: 1px solid rgba(#000, .05);
+  background-image:linear-gradient(-180deg,#FFB793 0%, #FF8A65 100%);
+}
+
+.button-style:hover {
+  background: darken($orange, 3%);
+  border: 1px solid rgba(#000, .05);
+  //box-shadow: 1px 1px 2px rgba(#000, .2);
+  color: darken(#fff, 5%);
+  text-decoration: none;
+  transition: all 150ms linear;
+}
+
+.button{
+  z-index: 5;
+  position: absolute;
+  bottom:15%;
+  left:50%;
   margin-top:20px;
   padding:2px 5px;
-  cursor:pointer;
-  width:180px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-size: 16px;
+
+}
+
+.button:hover {
+  background: darken($orange, 3%);
+  border: 1px solid rgba(#000, .05);
+  box-shadow: 1px 1px 2px rgba(#000, .2);
+  color: darken(#fff, 5%);
+  text-decoration: none;
+  transition: all 150ms linear;
+}
+
+.sign-in-button{
+  width:300px;
+  margin-bottom: 10px;
 }
 
 #wrapper{
@@ -204,7 +256,6 @@ $darkgrey: #4A4A4A;
   }
 
   .button{
-    font-size: 1.125em;
     width:230px;
     bottom:auto;
     top:calc(10% + 60px);
@@ -283,7 +334,6 @@ $darkgrey: #4A4A4A;
     }
 
     .button{
-      font-size: 1.125em;
       width:230px;
       bottom:auto;
       top:calc(25% + 180px);
