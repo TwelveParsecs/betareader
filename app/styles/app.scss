@@ -1,11 +1,12 @@
 @import "reset";
 @import "fonts";
 @import "nav";
+@import "footer";
 @import "matches";
 @import "signup";
 @import "login";
 
-$bodyFont : "Lato", Helvetica, Arial;
+$bodyFont : "Lato";
 $displayFont : "aleobold";
 
 $browser-context: 16px;
@@ -19,7 +20,7 @@ html{
 
 body{
   font-family: $bodyFont;
-  font-weight: 400;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;

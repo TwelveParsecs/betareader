@@ -2,6 +2,9 @@ $grey:#dcdfda;
 $orange: #FF8A65;
 $darkgrey: #4A4A4A;
 
+#login{
+  background: $grey;
+}
 
 #login-nav{
   position: absolute;
@@ -25,6 +28,7 @@ $darkgrey: #4A4A4A;
   #sign-in-block{
     float:right;
     margin-right: 10px;
+    cursor:pointer;
     #sign-in{
       display: inline-block;
       font-weight: 600;
@@ -42,6 +46,57 @@ $darkgrey: #4A4A4A;
 
   }
 }
+
+/********************** SIGN IN MODAL ********************/
+.ember-modal-dialog {
+  margin-top:55px;
+  width:300px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #222;
+  padding: 10px;
+
+  #login-bits{
+    width:100%;
+
+    input{
+      border-radius: 3px;
+      border:1px solid $grey;
+      padding:10px;
+      font-size: 1em;
+      display:block;
+      margin-bottom:10px;
+      width:calc(100% - 20px);
+      max-width: 340px;
+    }
+    input:focus{
+      background-color: #fff;
+    }
+  }
+}
+.ember-modal-overlay.translucent {
+  background-color: rgba(#808080, .77);
+}
+
+.ember-modal-overlay {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+.ember-modal-dialog {
+  z-index: 50;
+  position: fixed;
+
+  &.ember-modal-dialog-in-place {
+    position: static;
+  }
+}
+
+
+/**********************   HERO   ******************/
 
 #hero {
   position:relative;
@@ -83,17 +138,17 @@ $darkgrey: #4A4A4A;
   position: absolute;
   bottom:15%;
   left:50%;
-  transform: translateX(-50%);
   text-decoration: none;
   //font-family: aleoregular;
   color:#fff;
   font-weight: 600;
   text-align: center;
+  font-size: 16px;
   background-color: $orange;
   border-radius: 3px;
   border:1px solid $orange;
   margin-top:20px;
-  padding:2px 10px;
+  padding:2px 5px;
   cursor:pointer;
   width:180px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -119,28 +174,32 @@ $darkgrey: #4A4A4A;
 }
 
 
-#login-bits{
-  max-width: 200px;
-}
-
-
-
 @media (min-width:500px){
   #login-nav{
+    height:65px;
     max-width: 1440px;
     margin: 0 auto;
     position: absolute;
-    left:50%;
-    transform: translateX(-50%);
 
     #logo{
       margin-left: 10px;
-      margin-top:5px;
+      margin-top: 15px;
       display: inline-block;
     }
 
     #logo-partial{
       display: none;
+    }
+
+    #sign-in-block{
+      #sign-in{
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+      #nav-sign-up{
+        margin-top: 15px;
+      }
     }
   }
 
@@ -149,17 +208,6 @@ $darkgrey: #4A4A4A;
     width:230px;
     bottom:auto;
     top:calc(10% + 60px);
-  }
-
-  .col-left{
-    display: block;
-    margin: 0 auto;
-    width:500px;
-  }
-  .col-right{
-    display: block;
-    margin: 0 auto;
-    width:500px;
   }
 }
 
@@ -175,7 +223,6 @@ $darkgrey: #4A4A4A;
 
     #logo{
       margin-left: 10px;
-      margin-top:5px;
       display: inline-block;
     }
 
@@ -184,57 +231,92 @@ $darkgrey: #4A4A4A;
     }
   }
 
+  #spacer{
+    background: $grey;
+    position: relative;
+    display:inline-block;
+    width:20%;
+    height:80vh;
+  }
+
   #hero {
+    position:relative;
+    display:inline-block;
+    width:80%;
+    height:80vh;
+    background-image: url("img/heroFull.png");
     background-size: auto 100%;
-    background-position: center top;
+    background-position: left top;
     background-repeat: no-repeat;
+  }
+
+  #hero-text{
+    position: absolute;
+    top:0;
+    max-width: 1640px;
+    height:80vh;
+    width:100%;
+    margin: 0 auto;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
 
     #hero-tag{
-      top:10%;
-      font-size: 2em;
-      min-width: 800px;
+      position: absolute;
+      top:25%;
+      left:9%;
+      font-size: 2.125em;
+      width:400px;
+      text-align: left;
+      line-height: 1.25em;
+      color:$darkgrey;
+      transform: none;
+    }
+
+    #tag-line{
+      position:absolute;
+      top:calc(25% + 100px);
+      font-size: 20px;
+      width:450px;
+      line-height: 26px;
+      left:9%;
+    }
+
+    .button{
+      font-size: 1.125em;
+      width:230px;
+      bottom:auto;
+      top:calc(25% + 180px);
+      left:0;
+      margin:0;
+      left:9%;
     }
   }
 
-  .button{
-    font-size: 1.125em;
-    width:230px;
-    bottom:auto;
-    top:calc(10% + 60px);
-  }
-
   #wrapper{
-    padding-top:50px;
+    width:100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom:50px;
+    display: flex;
+    padding-bottom:100px;
 
     .value-prop{
       position:relative;
-      width:1000px;
-      margin: 0 auto;
-      height:500px;
+      margin:0 1.5%;
+      height:auto;
+      width:30%;
       line-height: 1.675em;
 
       img{
-        width:500px;
-      }
-      .col-left{
-        position:absolute;
-        width:500px;
-        height:500px;
-        left:0px;
-      }
-      .col-right{
-        position:absolute;
-        width:500px;
-        height:500px;
-        right:0px;
+        width:90%;
+        padding: 5%;
+        margin-bottom: 20px;
       }
       .value-prop-text{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
 
         h4{
-          font-size: 18px;
+          font-size: 20px;
           padding:0 20px 10px 20px;
           font-weight: 600;
         }

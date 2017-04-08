@@ -1,0 +1,28 @@
+footer{
+  //border-top:0px solid #4A4A4A;
+  height:200px;
+  background:#dcdfda;
+
+  ul{
+    padding-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    li{
+      display: inline-block;
+      margin-left: 15px;
+
+      .social-icon{
+        width:44px;
+        vertical-align: middle;
+      }
+      a:link{
+        color:#4A4A4A;
+        text-decoration: none;
+      }
+    }
+  }
+  #copyright{
+    text-align: center;
+  }
+}
