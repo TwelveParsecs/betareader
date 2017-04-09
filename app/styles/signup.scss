@@ -5,22 +5,13 @@ label{
   display:block;
 }
 
-input{
-  border-radius: 3px;
-  border:1px solid $grey;
-  padding:10px;
-  font-size: 1em;
-  display:block;
-  margin-bottom:10px;
-  width:100%;
-  max-width: 340px;
-}
 
 .hidden{
   display:none;
 }
 
 form{
+  overflow:hidden;
   width:100%;
   background-image: url("img/pattern.png");
   background-repeat: repeat;
@@ -28,23 +19,87 @@ form{
   position:absolute;
 }
 
-.next-button{
-  font-family: aleoregular;
-  color:#fff;
-  text-align: center;
-  background-color: $orange;
-  border-radius: 3px;
-  border:1px solid $orange;
-  margin-top:20px;
-  width:100%;
-  max-width: 340px;
-  padding:2px 10px;
-  cursor:pointer;
+.block-1{
+  margin-left: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+  transition: all 0.1s ease-in;
+}
+
+.block-2{
+  margin-left: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+}
+
+.block-3{
+  margin-left: 20px;
+  box-shadow: none !important;
 }
 
 .input-block{
   position: absolute;
   left:50%;
-  transform: translate(-50%,-50%);
+  width:calc(100% - 40px);
+  height:100%;
+  max-height:500px;
+  max-width: 400px;
+  padding:20px;
+  //transform:  translate(-50%,-50%) rotateY(0deg);
+  transform:  translate(-50%,-50%) rotate(0deg);
+
+  background: #fff;
   top:40%;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: all 1s ease-in;
+  backface-visibility: hidden;
+
+  .block-number{
+    text-align: right;
+  }
+
+  h3{
+    text-align: center;
+    margin-bottom:20px;
+  }
+
+  input{
+    border-radius: 3px;
+    border:1px solid $grey;
+    padding:10px;
+    font-size: 1em;
+    display:block;
+    margin-bottom:10px;
+    width:calc(100% - 20px);
+  }
+
+  #b-day{
+  }
+
+  .thirds{
+    float:left;
+    width:calc(33% - 28px);
+  }
+
+  .thirds-margin{
+    margin-right: 11px;
+  }
+
+  .next-button{
+    font-family: aleoregular;
+    color:#fff;
+    text-align: center;
+    background-color: $orange;
+    border-radius: 3px;
+    border:1px solid $orange;
+    margin-top:20px;
+    width:calc(100% - 20px);
+    padding:2px 10px;
+    cursor:pointer;
+  }
+}
+
+.page-turn{
+  //transform: translate(-300%,-50%) rotateY(180deg);
+  transform:rotate(-30deg);
+  left:-600px;
 }
