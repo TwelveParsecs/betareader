@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
       var nextNextBlock = currentBlock+3;
       Ember.$("#signup"+currentBlock).addClass("page-turn");
 
-      if (currentBlock < 5){
+      if (currentBlock < 6){
         Ember.$("#signup"+next).removeClass("block-1");
 
         Ember.$("#signup"+nextBlock).removeClass("block-2");

@@ -5,7 +5,6 @@ label{
   display:block;
 }
 
-
 .hidden{
   display:none;
 }
@@ -22,7 +21,6 @@ form{
 .block-1{
   margin-left: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
-  transition: all 0.1s ease-in;
 }
 
 .block-2{
@@ -38,16 +36,15 @@ form{
 .input-block{
   position: absolute;
   left:50%;
-  width:calc(100% - 40px);
+  top:50%;
+  width:calc(90% - 40px);
   height:100%;
   max-height:500px;
-  max-width: 400px;
-  padding:20px;
+  max-width: 360px;
+  padding:20px 40px;
   //transform:  translate(-50%,-50%) rotateY(0deg);
   transform:  translate(-50%,-50%) rotate(0deg);
-
   background: #fff;
-  top:40%;
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   transition: all 1s ease-in;
@@ -62,9 +59,14 @@ form{
     margin-bottom:20px;
   }
 
+  .input-group{
+    width:100%;
+    margin:0 auto;
+  }
+
   input{
-    border-radius: 3px;
-    border:1px solid $grey;
+    border:none;
+    border-bottom:1px solid $grey;
     padding:10px;
     font-size: 1em;
     display:block;
@@ -72,12 +74,47 @@ form{
     width:calc(100% - 20px);
   }
 
+  input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+
+  input:focus{
+    outline: none !important;
+    border:none;
+    border-bottom:1px solid $orange;
+  }
+
+  .dropdown{
+    margin-bottom:10px;
+  }
+
+  .dropdown select{
+    padding:10px;
+    width:100%;
+  }
+
+  .dropdown select:focus{
+    padding:10px;
+    width:100%;
+  }
+
+  textarea{
+    width:calc(100% - 8px);
+    height:280px;
+    resize: none;
+    font-size: 16px;
+    font-family: Lato;
+  }
+
   #b-day{
+
   }
 
   .thirds{
+    border:1px solid $grey;
     float:left;
-    width:calc(33% - 28px);
+    width:calc(33% - 29px);
+    border-radius: 3px;
   }
 
   .thirds-margin{
@@ -85,6 +122,9 @@ form{
   }
 
   .next-button{
+    position:absolute;
+    bottom:40px;
+    font-size: 16px;
     font-family: aleoregular;
     color:#fff;
     text-align: center;
@@ -92,9 +132,30 @@ form{
     border-radius: 3px;
     border:1px solid $orange;
     margin-top:20px;
-    width:calc(100% - 20px);
+    width:calc(100% - 105px);
     padding:2px 10px;
     cursor:pointer;
+  }
+
+  .real-button{
+    width:calc(100% - 82px);
+    padding:7px 10px 8px 10px;
+  }
+
+  .ember-radio-button{
+    input{
+      display: inline;
+      border:none;
+      border-bottom:1px solid $grey;
+      padding:0px;
+      font-size: 1em;
+      margin-bottom:0px;
+      width:auto;
+    }
+
+    .radio-label{
+      display: inline;
+    }
   }
 }
 
