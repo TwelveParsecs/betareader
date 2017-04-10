@@ -22,6 +22,23 @@ $darkgrey: #4A4A4A;
     transition: width 0.5s ease;
   }
 
+
+  #label-group{
+    z-index: 10;
+    position: absolute;
+    top:10px;
+    width: 121%;
+    margin-left: -9%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    font-size: 12px;
+
+    .label{
+      display: inline-block;
+    }
+  }
+
   #section-group{
     z-index: 10;
     position: absolute;
@@ -64,5 +81,21 @@ $darkgrey: #4A4A4A;
       box-shadow: 0 1px 4px rgba(0,0,0,0.5);
       transform:scale(1.2,1.2);
     }
+
+    // #section1::after{
+    //   font-size: 12px;
+    //   margin-top:10px;
+    //   display: inline-block;
+    //   transform: translateX(-40%);
+    //   content: "Account"
+    // }
+    //
+    // #section2::after{
+    //   font-size: 12px;
+    //   margin-top:10px;
+    //   display: inline-block;
+    //   transform: translateX(-40%);
+    //   content: "Reading"
+    // }
   }
 }
