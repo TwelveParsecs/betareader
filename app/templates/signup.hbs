@@ -1,123 +1,122 @@
-<div id="sign-up-background">
   <form>
     {{signup-progress id="sign-up-progress-bar" current=current}}
-    <div id="cards">
-      <div id="signup6" class="input-block block-3">
-        <h3> Bio</h3>
 
-        <label for="description">Write a little about yourself.</label>
-        {{textarea id="description" value=description cols="80" rows="6"}}
-        <button class="next-button real-button" {{action "signUp"}}>Finish</button>
-      </div>
+    <div id="signup6" class="input-block block-3">
+      <h3> Bio</h3>
 
-      <div id="signup5" class="input-block block-3">
-        <h3> Critique Experience</h3>
+      <label for="description">Write a little about yourself.</label>
+      {{textarea id="description" value=description cols="80" rows="6"}}
+      <button class="next-button real-button" {{action "signUp"}}>Finish</button>
+    </div>
+ 
+    <div id="signup5" class="input-block block-3">
 
-        <label for="experience">How much experience do you have with critique?</label>
-        {{drop-down options=experienceOptions id="experience" class="dropdown" class="dropdown"sendOptions="setExperience"}}
+      <h3> Critique Experience</h3>
 
-        <label for="hours">How many hours a week do you have for critique?</label>
-        {{drop-down options=hoursOptions id="hours" class="dropdown" sendOptions="setHours"}}
+      <label for="experience">How much experience do you have with critique?</label>
+      {{drop-down options=experienceOptions id="experience" class="dropdown" class="dropdown"sendOptions="setExperience"}}
 
-        <div class="next-button" {{action "nextBlock" 5}}> Next </div>
-      </div>
+      <label for="hours">How many hours a week do you have for critique?</label>
+      {{drop-down options=hoursOptions id="hours" class="dropdown" sendOptions="setHours"}}
 
-      <div id="signup4" class="input-block block-3">
-        <h3> Writing Experience</h3>
+      <div class="next-button" {{action "nextBlock" 5}}> Next </div>
+    </div>
 
-        <label for="years-writing">How many years have you been writing seriously?</label>
-        {{input type="text" value=yearsWriting id="years-writing"}}
+    <div id="signup4" class="input-block block-3">
+      <h3> Writing Experience</h3>
 
-        <label for="draft-completion">How often do you finish drafts?</label>
-        {{drop-down options=draftCompletionOptions class="dropdown"  id="draft-completion" sendOptions="setDraftCompletion"}}
+      <label for="years-writing">How many years have you been writing seriously?</label>
+      {{input type="text" value=yearsWriting id="years-writing"}}
 
-        Have you ever published with a publishing house?
-        {{#radio-button
-          value="1"
-          groupValue=published
-          changed="setPublished"}}
-          Yes
-        {{/radio-button}}
+      <label for="draft-completion">How often do you finish drafts?</label>
+      {{drop-down options=draftCompletionOptions class="dropdown"  id="draft-completion" sendOptions="setDraftCompletion"}}
 
-        {{#radio-button
-          value="0"
-          groupValue=published
-          changed="setPublished"}}
-          No
-        {{/radio-button}}
+      Have you ever published with a publishing house?
+      {{#radio-button
+        value="1"
+        groupValue=published
+        changed="setPublished"}}
+        Yes
+      {{/radio-button}}
 
-        <div class="next-button" {{action "nextBlock" 4}}> Next </div>
-      </div>
+      {{#radio-button
+        value="0"
+        groupValue=published
+        changed="setPublished"}}
+        No
+      {{/radio-button}}
 
-      <div id="signup3" class="input-block block-2" >
-        <h3> Writing Habits</h3>
+      <div class="next-button" {{action "nextBlock" 4}}> Next </div>
+    </div>
 
-        Do you write?
-        {{#radio-button
-          value="1"
-          groupValue=writes
-          changed="setWrites"}}
-          <span class="radio-label">Yes</span>
-        {{/radio-button}}
+    <div id="signup3" class="input-block block-2" >
+      <h3> Writing Habits</h3>
 
-        {{#radio-button
-          value="0"
-          groupValue=writes
-          changed="setWrites"}}
-          <span class="radio-label">No</span>
-        {{/radio-button}}
+      Do you write?
+      {{#radio-button
+        value="1"
+        groupValue=writes
+        changed="setWrites"}}
+        <span class="radio-label">Yes</span>
+      {{/radio-button}}
 
-        <label for="genres-write">What genres do you write?</label>
-        {{input type="text" value=genresWrite id="genres-write"}}
+      {{#radio-button
+        value="0"
+        groupValue=writes
+        changed="setWrites"}}
+        <span class="radio-label">No</span>
+      {{/radio-button}}
 
-        <div class="next-button" {{action "nextBlock" 3}}> Next </div>
-      </div>
+      <label for="genres-write">What genres do you write?</label>
+      {{input type="text" value=genresWrite id="genres-write"}}
 
-      <div id="signup2" class="input-block block-1">
-        <h3> Reading Habits</h3>
+      <div class="next-button" {{action "nextBlock" 3}}> Next </div>
+    </div>
 
-        <label for="genres-read">What genres do you read?</label>
-        {{input type="text" value=genresRead id="genres-read"}}
+    <div id="signup2" class="input-block block-1">
+      <h3> Reading Habits</h3>
 
-        <label for="read-freq">How often do you read?</label>
-        {{drop-down options=readFreqOptions id=read-freq class="dropdown" sendOptions="setReadFreq"}}
+      <label for="genres-read">What genres do you read?</label>
+      {{input type="text" value=genresRead id="genres-read"}}
 
-        <label for="novel-length">What is your ideal novel length?</label>
-        {{drop-down options=novelLengthOptions id="novel-length" class="dropdown" sendOptions="setNovelLength"}}
+      <label for="read-freq">How often do you read?</label>
+      {{drop-down options=readFreqOptions id=read-freq class="dropdown" sendOptions="setReadFreq"}}
 
-        <div class="next-button" {{action "nextBlock" 2}}> Next </div>
-      </div>
+      <label for="novel-length">What is your ideal novel length?</label>
+      {{drop-down options=novelLengthOptions id="novel-length" class="dropdown" sendOptions="setNovelLength"}}
 
-    <!--  <div id="signup2" class="input-block block-1">
-         <label for="education">Highest Education Level</label>
-        {/{drop-down options=educationOptions id="education" sendOptions="setEducation"}/}
+      <div class="next-button" {{action "nextBlock" 2}}> Next </div>
+    </div>
 
-        <div class="next-button" {{action "nextBlock" 2}}> Next </div>
-      </div> -->
+  <!--  <div id="signup2" class="input-block block-1">
+       <label for="education">Highest Education Level</label>
+      {/{drop-down options=educationOptions id="education" sendOptions="setEducation"}/}
 
-      <div id="signup1" class="input-block">
+      <div class="next-button" {{action "nextBlock" 2}}> Next </div>
+    </div> -->
 
-        <h3> Create an Account</h3>
-        <div class="input-group">
-          <label for="pen-name">Username</label>
-          {{input type="text" value=name id="pen-name"}}
+    <div id="signup1" class="input-block">
 
-          <label for="email">Email</label>
-          {{input type="text" value=email id="email"}}
+      <h3> Create an Account</h3>
+      <div class="input-group">
+        <label for="pen-name">Username</label>
+        {{input type="text" value=name id="pen-name"}}
 
-          <label for="password">Password</label>
-          {{input type="password" value=password id="password"}}
+        <label for="email">Email</label>
+        {{input type="text" value=email id="email"}}
 
-          <fieldset id="b-day">
-            <legend>Birthday</legend>
-              {{input type="text" value=day id="bday-day" class="thirds thirds-margin" placeholder="dd"}}
-              {{input type="text" value=month id="bday-month" class="thirds thirds-margin" placeholder="mm"}}
-              {{input type="text" value=year id="bday-year" class="thirds" placeholder="yyyy"}}
-          </fieldset>
+        <label for="password">Password</label>
+        {{input type="password" value=password id="password"}}
 
-          <div class="next-button" {{action "nextBlock" 1}}> Next </div>
-        </div>
+        <fieldset id="b-day">
+          <legend>Birthday</legend>
+            {{input type="text" value=day id="bday-day" class="thirds thirds-margin" placeholder="dd"}}
+            {{input type="text" value=month id="bday-month" class="thirds thirds-margin" placeholder="mm"}}
+            {{input type="text" value=year id="bday-year" class="thirds" placeholder="yyyy"}}
+        </fieldset>
+
+        <div class="next-button" {{action "nextBlock" 1}}> Next </div>
       </div>
     </div>
+
   </form>
-</div>
