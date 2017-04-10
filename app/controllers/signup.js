@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   responseMessage: '',
-
+  current:1,
   //Table data
   email: '',
   password: '',
@@ -40,20 +40,21 @@ export default Ember.Controller.extend({
   // Send form
   actions: {
     nextBlock(currentBlock){
+      this.set("current", currentBlock + 1);
       var next = currentBlock+1;
       var nextBlock = currentBlock+2;
       var nextNextBlock = currentBlock+3;
-      Ember.$("#signup"+currentBlock).addClass("page-turn");
-
-      if (currentBlock < 6){
-        Ember.$("#signup"+next).removeClass("block-1");
-
-        Ember.$("#signup"+nextBlock).removeClass("block-2");
-        Ember.$("#signup"+nextBlock).addClass("block-1");
-
-        Ember.$("#signup"+nextNextBlock).removeClass("block-3");
-        Ember.$("#signup"+nextNextBlock).addClass("block-2");
-      }
+      // Ember.$("#signup"+currentBlock).addClass("page-turn");
+      //
+      // if (currentBlock < 6){
+      //   Ember.$("#signup"+next).removeClass("block-1");
+      //
+      //   Ember.$("#signup"+nextBlock).removeClass("block-2");
+      //   Ember.$("#signup"+nextBlock).addClass("block-1");
+      //
+      //   Ember.$("#signup"+nextNextBlock).removeClass("block-3");
+      //   Ember.$("#signup"+nextNextBlock).addClass("block-2");
+      // }
       console.log(currentBlock);
       // Ember.$("#signup"+currentBlock).fadeToggle(".hidden");
       // Ember.$("#signup"+next).fadeToggle(".hidden");

@@ -124,17 +124,42 @@ form{
   .next-button{
     position:absolute;
     bottom:40px;
-    font-size: 16px;
+    // font-size: 16px;
+    // font-family: aleoregular;
+    // color:#fff;
+    // text-align: center;
+    // background-color: $orange;
+    // border-radius: 3px;
+    // border:1px solid $orange;
+    // margin-top:20px;
+     width:calc(100% - 105px);
+    // padding:2px 10px;
+    // cursor:pointer;
+
+    z-index: 5;
+    text-decoration: none;
     font-family: aleoregular;
     color:#fff;
+    font-weight: 600;
     text-align: center;
+    font-size: 16px;
     background-color: $orange;
     border-radius: 3px;
     border:1px solid $orange;
-    margin-top:20px;
-    width:calc(100% - 105px);
     padding:2px 10px;
     cursor:pointer;
+    //box-shadow: 0 2px 4px rgba(0,0,0,0.29);
+    border: 1px solid rgba(#000, .05);
+    background-image:linear-gradient(-180deg,#FD9C7D 0%, $orange 100%);
+  }
+//#FFB793
+  .next-button:hover {
+    background: darken($orange, 3%);
+    border: 1px solid rgba(#000, .05);
+    //box-shadow: 1px 1px 2px rgba(#000, .2);
+    color: darken(#fff, 5%);
+    text-decoration: none;
+    transition: all 150ms linear;
   }
 
   .real-button{
