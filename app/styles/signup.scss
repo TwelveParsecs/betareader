@@ -1,14 +1,13 @@
 $orange: #FF8A65;
 $grey: #AEAEAE;
+$darkgrey: #4A4A4A;
 $turquoise: #4ECDC4;
 
 label{
   display:block;
 }
 
-.hidden{
-  display:none;
-}
+
 
 form{
   overflow:hidden;
@@ -76,22 +75,35 @@ form{
   }
 
   input{
-    border:none;
-    border-bottom:1px solid $grey;
+    border-radius: 3px;
+    border:1px solid $grey;
     padding:10px;
     font-size: 1em;
     margin-bottom:10px;
     width:calc(100% - 20px);
+    color:$darkgrey;
+
   }
 
-  input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0px 1000px white inset;
+  .input-transition{
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(0%);
   }
+
+  .invisible{
+    opacity:0;
+    transform: translateY(100%);
+  }
+
+  // input:-webkit-autofill {
+  //     -webkit-box-shadow: 0 0 0px 1000px white inset;
+  //     color:$darkgrey !important;
+  //     font-weight: 900;
+  // }
 
   input:focus{
     outline: none !important;
-    border:none;
-    border-bottom:1px solid $orange;
+    border:1px solid $orange;
   }
 
   .dropdown{
@@ -99,9 +111,19 @@ form{
   }
 
   .dropdown select{
+    color:$darkgrey;
     border-radius: 3px;
     padding:10px;
     width:100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff url('img/down-arrow.svg') no-repeat;
+    background-size: 20px;
+    background-position:  right 10px center;
+
+    option{
+      border:1px solid $orange;
+    }
 
     option:focus{
       outline: none !important;

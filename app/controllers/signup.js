@@ -83,13 +83,13 @@ export default Ember.Controller.extend({
       this.set('writes',value);
       if (value == 1){
         // Show additional card information
-        Ember.$('#genres-write').removeClass("hidden");
-        Ember.$('#genres-write-label').removeClass("hidden");
+        Ember.$('#genres-write').removeClass("invisible");
+        Ember.$('#genres-write-label').removeClass("invisible");
       }
       else{
         // Hide additional card information
-        Ember.$('#genres-write').addClass("hidden");
-        Ember.$('#genres-write-label').addClass("hidden");
+        Ember.$('#genres-write').addClass("invisible");
+        Ember.$('#genres-write-label').addClass("invisible");
       }
     },
     setPublished(value){
