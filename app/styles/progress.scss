@@ -12,9 +12,12 @@ $darkgrey: #4A4A4A;
     height:5px;
     width:100%;
     background-color:$grey;
+    opacity: 0.8;
+    transition: all 0.4s ease;
   }
 
   #progress-bar{
+    z-index: 3;
     position: absolute;
     height:5px;
     width:0%;
@@ -27,12 +30,19 @@ $darkgrey: #4A4A4A;
     z-index: 10;
     position: absolute;
     top:10px;
-    width: 122%;
-    margin-left: -9%;
+    //width: 116%;
+    width: 120%;
+    //margin-left: -9%;
+    margin-left: -11%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     font-size: 12px;
+
+    #label4{
+      display:none;
+      opacity: 0;
+    }
 
     .label{
       display: inline-block;
@@ -43,11 +53,18 @@ $darkgrey: #4A4A4A;
     z-index: 10;
     position: absolute;
     top:-6px;
-    width: 118%;
-    margin-left: -9%;
+    //  width: 118%;
+    width:123%;
+    //margin-left: -9%;
+    margin-left: -11.5%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+
+    #section4{
+        display:none;
+        opacity:0;
+    }
 
     .section{
       margin-top:0;

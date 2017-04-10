@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
   genresRead: '',
   readFreq: 'Every day',
   novelLength: '> 200 Pages',
-  writes: null,
+  writes: 0,
   genresWrite: '',
   yearsWriting: '',
   draftCompletion: 'Every Month',
@@ -81,6 +81,9 @@ export default Ember.Controller.extend({
     },
     setWrites(value){
       this.set('writes',value);
+      if (value === 1){
+        Ember.$('#section4').css("display","inline-block");
+      }
       console.log(this.get('writes',value));
     },
     setPublished(value){

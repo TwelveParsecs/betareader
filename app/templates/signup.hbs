@@ -1,14 +1,14 @@
   <form>
-    {{signup-progress id="sign-up-progress-bar" current=current}}
+    {{signup-progress id="sign-up-progress-bar" current=current writes=writes}}
 
     <div id="signup6" class="input-block block-3">
-      <h3> Bio</h3>
+      <h3>Profile Bio</h3>
 
       <label for="description">Write a little about yourself.</label>
       {{textarea id="description" value=description cols="80" rows="6"}}
       <button class="next-button real-button" {{action "signUp"}}>Finish</button>
     </div>
- 
+
     <div id="signup5" class="input-block block-3">
 
       <h3> Critique Experience</h3>
@@ -67,8 +67,8 @@
         <span class="radio-label">No</span>
       {{/radio-button}}
 
-      <label for="genres-write">What genres do you write?</label>
-      {{input type="text" value=genresWrite id="genres-write"}}
+      <label for="genres-write" class="hidden">What genres do you write?</label>
+      {{input type="text" value=genresWrite id="genres-write" class="hidden"}}
 
       <div class="next-button" {{action "nextBlock" 3}}> Next </div>
     </div>
