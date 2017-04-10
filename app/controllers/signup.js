@@ -81,10 +81,16 @@ export default Ember.Controller.extend({
     },
     setWrites(value){
       this.set('writes',value);
-      if (value === 1){
-        Ember.$('#section4').css("display","inline-block");
+      if (value == 1){
+        // Show additional card information
+        Ember.$('#genres-write').removeClass("hidden");
+        Ember.$('#genres-write-label').removeClass("hidden");
       }
-      console.log(this.get('writes',value));
+      else{
+        // Hide additional card information
+        Ember.$('#genres-write').addClass("hidden");
+        Ember.$('#genres-write-label').addClass("hidden");
+      }
     },
     setPublished(value){
       this.set('published',value);

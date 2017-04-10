@@ -6,20 +6,32 @@ export default Ember.Component.extend({
   currentBlock: Ember.observer('current', function() {
     var currentBlock= this.get("current");
     var width;
+    var _this = this;
 
+    // Change length of progress bar based on the number of sections
     if (this.get("writes") == 0){
-      width = 25 * (currentBlock - 1);
+      Ember.$("#signup4").css("display","none");
+
+      // Adjust bar length for missing card
+      if (currentBlock < 6) width = 25 * (currentBlock - 1);
+      else width = 25 * (currentBlock - 2);
     }
     else{
       Ember.$('#section4').css("display","inline-block");
+      Ember.$("#signup4").css("display","block");
       width = 20 * (currentBlock - 1);
     }
-
     Ember.$("#progress-bar").css("width", width + "%");
+
     // Delay until progress bar is finished
     setTimeout(function() {
       Ember.$("#section"+ (currentBlock - 1)).addClass("completed");
       Ember.$("#section"+ (currentBlock - 1)).removeClass("current");
+
+      // Check if we're skipping the writing experience card
+      if (_this.get("writes") == 0 && currentBlock == 4){
+         currentBlock += 1;
+      }
       Ember.$("#section"+ currentBlock).addClass("current");
     }, 300);
   }),
