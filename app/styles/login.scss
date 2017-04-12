@@ -66,7 +66,6 @@ $darkgrey: #4A4A4A;
         -webkit-box-shadow: 0 0 0px 1000px white inset;
     }
     input{
-
       border-radius: 3px;
       border:1px solid $grey;
       padding:10px;
@@ -134,7 +133,8 @@ $darkgrey: #4A4A4A;
     // //background-color: rgba(0,0,0,0.1);
     // background: linear-gradient(to bottom, rgba(0,0,0,0) 10%,rgba(0,0,0,0.5) 30%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
-
+}
+#hero-text{
   #hero-tag{
     z-index: 10;
     position: absolute;
@@ -143,12 +143,25 @@ $darkgrey: #4A4A4A;
     transform: translateX(-50%);
     text-align: center;
     line-height: 1.25em;
-    min-width: 260px;
-    color:#fff;
+    width:250px;
+
+    color:$darkgrey;
     -webkit-filter: blur(0.000001px);
     //background-color: rgba(0,0,0,0.6);
     //text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     padding: 20px 0;
+  }
+
+  #tag-line{
+    position:absolute;
+    top:calc(10% + 65px);
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    text-align: center;
+    width:400px;
+    line-height: 26px;
+    display: none;
   }
 }
 
@@ -184,12 +197,13 @@ $darkgrey: #4A4A4A;
 .button{
   z-index: 5;
   position: absolute;
-  bottom:15%;
+  top: calc(10% + 85px);
   left:50%;
+  transform: translateX(-50%);
   margin-top:20px;
   padding:2px 5px;
   font-size: 16px;
-
+  width:210px;
 }
 
 .button:hover {
@@ -210,13 +224,18 @@ $darkgrey: #4A4A4A;
   background-color: $grey;
   .value-prop{
     img{
+      display: block;
+      margin: 0 auto;
       width:100%;
-      max-width:500px;
+      max-width:400px;
     }
     div{
+      margin: 0 auto 30px auto;
+      max-width:400px;
       h4{
         padding:0 20px 10px 20px;
         font-weight: 600;
+        text-align: center;
       }
       div{
         padding:0 20px;
@@ -255,10 +274,31 @@ $darkgrey: #4A4A4A;
     }
   }
 
+  #tag-line{
+    position:absolute;
+    top:calc(10% + 65px);
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    text-align: center;
+    width:400px;
+    line-height: 26px;
+    display: none;
+  }
+
   .button{
     width:230px;
     bottom:auto;
-    top:calc(10% + 60px);
+    top:calc(10% + 120px);
+  }
+
+  #hero-text{
+    #hero-tag{
+    }
+
+    #tag-line{
+      display: block;
+    }
   }
 }
 
@@ -326,20 +366,24 @@ $darkgrey: #4A4A4A;
 
     #tag-line{
       position:absolute;
-      top:calc(25% + 100px);
+      top:calc(25% + 115px);
       font-size: 20px;
       width:450px;
       line-height: 26px;
       left:9%;
+      transform:translateX(0);
+      text-align: left;
+
     }
 
     .button{
       width:230px;
       bottom:auto;
-      top:calc(25% + 180px);
+      top:calc(25% + 190px);
       left:0;
       margin:0;
       left:9%;
+      transform: translateX(0);
     }
   }
 

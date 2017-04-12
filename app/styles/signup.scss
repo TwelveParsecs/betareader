@@ -7,8 +7,6 @@ label{
   display:block;
 }
 
-
-
 form{
   overflow:hidden;
   width:100%;
@@ -24,7 +22,7 @@ form{
     position: absolute;
     top:10%;
     left:50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-50%);
   }
 }
 
@@ -47,7 +45,7 @@ form{
   position: absolute;
   left:50%;
   top:50%;
-  width:calc(90% - 40px);
+  width:calc(90% - 80px);
   height:100%;
   max-height:500px;
   max-width: 360px;
@@ -85,6 +83,10 @@ form{
 
   }
 
+  label{
+    line-height: 22px;
+  }
+
   .input-transition{
     transition: opacity 0.4s ease, transform 0.4s ease;
     transform: translateY(0%);
@@ -113,7 +115,7 @@ form{
   .dropdown select{
     color:$darkgrey;
     border-radius: 3px;
-    padding:10px;
+    padding:12px 10px;
     width:100%;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -132,7 +134,6 @@ form{
   }
 
   .dropdown select:focus{
-    padding:10px;
     width:100%;
     outline: none !important;
     border:1px solid $orange;
@@ -224,11 +225,31 @@ form{
   }
 }
 
+
+@media (max-width:600px){
+  form{
+    #sign-up-progress-bar{
+      display:none;
+    }
+  }
+
+  .input-block{
+    width:calc(100% - 80px);
+  }
+}
+
+
+@media (max-height:800px){
+  form{
+    #sign-up-progress-bar{
+      display:none;
+    }
+  }
+}
+
+
 .page-turn{
   //transform: translate(-300%,-50%) rotateY(180deg);
   transform:rotate(-30deg);
   left:-600px;
 }
-
-
-@media (min-width:600px){}
