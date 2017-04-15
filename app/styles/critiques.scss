@@ -1,0 +1,226 @@
+$orange: #FF8A65;
+$lightgrey: #DFDFDF;
+$grey: #AEAEAE;
+$darkgrey: #4A4A4A;
+$turquoise: #4ECDC4;
+
+#critiques{
+  padding-top: 105px;
+  background-image: url("img/pattern.png");
+  background-repeat: repeat;
+  min-height: calc(100vh);
+  height:100%;
+
+  #critique-tabs{
+    width:calc(100% - 20px);
+    margin:0 auto -10px auto;
+
+    ul{
+      li{
+        font-size: 12px;
+        margin-right:20px;
+        display: inline-block;
+        color:$grey;
+      }
+    }
+
+    hr{
+      border:none;
+      border-top: 1px solid $lightgrey;
+      margin:0px 0 30px 0;
+    }
+
+    .selected{
+      color:$darkgrey;
+      border-bottom:2px solid $orange;
+    }
+  }
+
+  .critique-card{
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+    border-radius: 3px;
+    width:calc(100% - 20px);
+    padding: 10px 10px 30px 10px;
+    margin:20px 0;
+    z-index: 0;
+
+    .top-icons{
+      text-align: right;
+      margin-bottom:10px;
+
+      .icon{
+        height:23px;
+        margin-left: 10px;
+      }
+
+      .settings-icon{
+        padding-bottom: 1px;
+      }
+    }
+
+    hr{
+      border:none;
+      border-top: 1px solid $lightgrey;
+    }
+
+    .author-pic{
+      height:30px;
+      float:left;
+      margin-bottom:20px;
+    }
+
+    .author-name{
+      margin-left: 10px;
+      color:$orange;
+      font-size: 18px;
+      line-height: 30px;
+      float:left;
+    }
+
+    .clear{
+      clear:both;
+    }
+
+    .entry{
+      clear:both;
+      position:relative;
+      margin-top:30px;
+      .entry-name{
+        text-align: center;
+      }
+      .entry-date{
+        position:absolute;
+        top:-30px;
+        right:0;
+        text-align: center;
+        font-size: 12px;
+        color:$grey;
+      }
+      .entry-action{
+        text-align: center;
+        margin-bottom:30px;
+
+        button{
+          width:100%;
+          max-width: 170px;
+          text-decoration: none;
+          color:#fff;
+          font-weight: 600;
+          text-align: center;
+          font-size: 16px;
+          background-color: $orange;
+          border-radius: 3px;
+          border:1px solid $orange;
+          padding:2px 10px;
+          cursor:pointer;
+          border: 1px solid rgba(#000, .05);
+          background-image:linear-gradient(-180deg,#FD9C7D 0%, $orange 100%);
+          height:39px;
+          margin-top:10px;
+        }
+
+        button:hover {
+          background: darken($orange, 3%);
+          border: 1px solid rgba(#000, .05);
+          color: darken(#fff, 5%);
+          text-decoration: none;
+          transition: all 150ms linear;
+        }
+
+        a:link{
+          color:$orange;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:650px){
+  #critiques{
+    #critique-tabs{
+      width:640px;
+      margin:20px auto;
+
+      ul{
+        li{
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .critique-card{
+      width:600px;
+      margin:20px auto;
+      padding: 10px 20px;
+
+      .entry{
+        clear:both;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-top:0px;
+        .entry-name{
+          text-align: left;
+          flex: 1;
+        }
+        .entry-date{
+          flex: 1;
+          position:static;
+          text-align: center;
+          font-size: 16px;
+          color:$darkgrey;
+          order: 2;
+        }
+        .entry-action{
+          text-align: right;
+          flex: 2;
+          order: 3;
+          margin-bottom:0px;
+
+          button{
+            margin-top:0;
+          }
+        }
+
+        hr{
+          clear:both;
+          width:100%;
+          order: 4;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:900px){
+  #critiques{
+
+    #critique-tabs{
+      max-width: 1020px;
+      width:calc(100% - 60px);
+      margin:20px auto;
+    }
+
+    .critique-card{
+      max-width: 940px;
+      width:calc(100% - 140px);
+      padding:20px 40px 20px 40px;
+
+      .author-name{
+        margin-left:0;
+        font-size: 22px;
+        line-height: 40px;
+      }
+
+      .author-pic{
+        height:40px;
+        float:left;
+        margin-bottom:20px;
+      }
+    }
+
+
+  }
+}
