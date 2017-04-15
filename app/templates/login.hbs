@@ -21,7 +21,9 @@
 
 <!-- Sign in modal -->
 {{#if isShowingModal}}
-{{#modal-dialog close="toggleModal" target="#sign-in" translucentOverlay=false targetAttachment='left'}}
+{{#modal-dialog close="toggleModal" translucentOverlay=true }}
+  <img src="assets/img/close-icon.svg" class="close" {{action "toggleModal"}}/>
+    <h2>Sign In</h2>
     <div id="login-bits">
       <label for="email">Email</label>
       {{input type="text" value=email id="email" placeholder="Email"}}
