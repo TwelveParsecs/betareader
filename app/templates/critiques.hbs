@@ -3,8 +3,8 @@
 <div id="critiques">
   <div id="critique-tabs">
     <ul>
-      <li class="selected">Current Critiques</li>
-      <li>Past Critiques</li>
+      <li class="selected" id="current-link" {{action "toggle" "true"}} >Current Critiques</li>
+      <li id="past-link" {{action "toggle" "false"}}>Past Critiques</li>
     </ul>
     <hr/>
   </div>
@@ -12,8 +12,9 @@
   <div id="current">
     {{critique-card}}
   </div>
-  <div id="past">
-
+  <div id="past" class="hidden">
+    {{critique-card}}
+    {{critique-card}}
   </div>
 
   {{partial 'footer'}}
