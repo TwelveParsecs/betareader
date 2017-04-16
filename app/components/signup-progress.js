@@ -39,6 +39,7 @@ export default Ember.Component.extend({
 
     console.log("current: " + currentBlock + ", last: " + lastBlock);
 
+
     if (lastBlock > currentBlock){
       var offset = lastBlock - currentBlock;
       Ember.$("#section"+(currentBlock+offset)).removeClass("current");
@@ -48,7 +49,7 @@ export default Ember.Component.extend({
     setTimeout(function() {
       if (_this.get("lastBlock") < currentBlock){
         var offset = 1;
-        if (currentBlock == 5) offset = 2;
+        if (currentBlock == 5 && _this.get("writes") == 0 ) offset = 2;
         Ember.$("#section"+ (currentBlock - offset)).addClass("completed");
         Ember.$("#section"+ (currentBlock - offset)).removeClass("current");
 
@@ -82,6 +83,10 @@ export default Ember.Component.extend({
       width = 25 * (currentBlock - 1);
     }
     else{
+      // Remove checkmark if it exists
+      Ember.$("#section4").removeClass("current");
+      Ember.$("#section4").removeClass("completed");
+
       Ember.$('#section4').css("display","inline-block");
       Ember.$('#section4').css("opacity","1");
 

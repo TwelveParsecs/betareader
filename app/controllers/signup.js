@@ -43,6 +43,7 @@ export default Ember.Controller.extend({
     nextBlock(currentBlock){
       this.set("last", currentBlock);
       Ember.$("#signup"+currentBlock).addClass("page-turn");
+      Ember.$("#signup"+(currentBlock)).addClass("block-shadow");
 
       if (this.get("writes") == 0){
         if (currentBlock != 3)this.set("current", currentBlock + 1);
@@ -68,15 +69,18 @@ export default Ember.Controller.extend({
         if (currentBlock != 5){
           this.set("current", currentBlock - 1);
           Ember.$("#signup"+(currentBlock-1)).removeClass("page-turn");
+          Ember.$("#signup"+(currentBlock-1)).removeClass("block-shadow");
         }
         else {
           this.set("current", currentBlock - 2);
           Ember.$("#signup"+(currentBlock-2)).removeClass("page-turn");
+          Ember.$("#signup"+(currentBlock-2)).removeClass("block-shadow");
         }
       }
       else{
         this.set("current", currentBlock - 1);
         Ember.$("#signup"+(currentBlock-1)).removeClass("page-turn");
+        Ember.$("#signup"+(currentBlock-1)).removeClass("block-shadow");
       }
     },
 
