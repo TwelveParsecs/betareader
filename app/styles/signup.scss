@@ -27,6 +27,12 @@ form{
     transform: translate(-50%,-50%);
   }
 }
+#login{
+  #footer{
+    background-color:#dcdfda;
+  }
+}
+
 
 .block-1{
   margin-left: 10px;
@@ -57,8 +63,16 @@ form{
   background: #fff;
   border-radius: 3px;
   box-shadow: 2px 0px 4px rgba(0,0,0,0.1) ;
-  transition: all 0.5s ease-in;
+  transition: all 0.9s ease;
   backface-visibility: hidden;
+
+  .back{
+    position:absolute;
+    height:25px;
+    left:20px;
+    top:20px;
+    cursor: pointer;
+  }
 
   .block-number{
     text-align: right;

@@ -62,7 +62,27 @@ export default Ember.Controller.extend({
       console.log(currentBlock);
       // Ember.$("#signup"+currentBlock).fadeToggle(".hidden");
       // Ember.$("#signup"+next).fadeToggle(".hidden");
+    },
+    lastBlock(currentBlock){
+      this.set("current", currentBlock - 1);
+      var last = currentBlock-1;
+      var nextBlock = currentBlock+1;
+      var nextNextBlock = currentBlock+2;
+      Ember.$("#signup"+last).removeClass("page-turn");
 
+      if (this.get("writes") == 0){
+        if (currentBlock == 5){
+          Ember.$("#signup6").removeClass("block-1");
+          Ember.$("#signup6").removeClass("block-2");
+        }
+      }
+      Ember.$("#signup"+next).removeClass("block-1");
+      Ember.$("#signup"+nextBlock).addClass("block-1");
+      Ember.$("#signup"+nextBlock).removeClass("block-2");
+      Ember.$("#signup"+nextNextBlock).addClass("block-2");
+      Ember.$("#signup"+nextNextBlock).removeClass("block-3");
+
+      console.log(currentBlock);
     },
 
     setEducation(value){

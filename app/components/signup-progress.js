@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   current:1,
+  lastBlock:0,
   writes:0,
   currentBlock: Ember.observer('current', function() {
     var currentBlock= this.get("current");
@@ -23,17 +24,33 @@ export default Ember.Component.extend({
     }
     Ember.$("#progress-bar").css("width", width + "%");
 
+
+    if (_this.get("lastBlock") > currentBlock){
+      Ember.$("#section"+(currentBlock+1)).removeClass("current");
+      Ember.$("#section"+(currentBlock+1)).removeClass("completed");
+    }
     // Delay until progress bar is finished
     setTimeout(function() {
-      Ember.$("#section"+ (currentBlock - 1)).addClass("completed");
-      Ember.$("#section"+ (currentBlock - 1)).removeClass("current");
+      if (_this.get("lastBlock") < currentBlock){
+        Ember.$("#section"+ (currentBlock - 1)).addClass("completed");
+        Ember.$("#section"+ (currentBlock - 1)).removeClass("current");
+      }
+      else {
+        Ember.$("#section"+ (currentBlock)).removeClass("current");
+        Ember.$("#section"+ (currentBlock)).removeClass("completed");
+      }
 
       // Check if we're skipping the writing experience card
-      if (_this.get("writes") == 0 && currentBlock == 4){
+      if (_this.get("writes") == 0 && currentBlock == 4 && lastBlock == 3){
          currentBlock += 1;
       }
+      else {
+
+      }
       Ember.$("#section"+ currentBlock).addClass("current");
+      _this.set("lastBlock", currentBlock);
     }, 300);
+
   }),
   writesStatus: Ember.observer('writes', function() {
     console.log("called");

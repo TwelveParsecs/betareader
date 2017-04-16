@@ -1,12 +1,18 @@
 footer{
+
   //border-top:0px solid #4A4A4A;
-  height:200px;
-  background:#dcdfda;
+  background:#fff;
+  text-align: center;
+  padding:50px 0px 50px 0;
 
   ul{
     padding-top: 20px;
+    padding-right:10px;
+    margin: 0 auto;
+    max-width:350px;
     margin-bottom: 10px;
     text-align: center;
+    display: inline-block;
 
     li{
       display: inline-block;
@@ -20,8 +26,9 @@ footer{
     }
   }
   #social-block{
-    width:75px;
-    margin:0 auto;
+    display: inline-block;
+    width:110px;
+    margin:0 auto 10px 0;
 
 
     .social-icon{
@@ -29,10 +36,19 @@ footer{
       vertical-align: middle;
       display:inline-block;
       text-align: center;
+      margin-right:10px;
     }
   }
 
   #copyright{
     text-align: center;
+  }
+}
+
+@media (min-width:500px){
+  footer{
+    ul{
+      max-width:none;
+    }
   }
 }
