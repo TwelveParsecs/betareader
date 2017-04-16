@@ -2,19 +2,30 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   current:1,
-  lastBlock:0,
+  lastBlock:1,
   writes:0,
   currentBlock: Ember.observer('current', function() {
     var currentBlock= this.get("current");
+    var nextBlock = currentBlock + 1;
+    var previousBlock = currentBlock - 1;
+    var lastBlock = this.get("lastBlock")
     var width;
     var _this = this;
+
+    // Check if we're skipping the writing experience card
+    // if (_this.get("writes") == 0 && currentBlock == 4 && lastBlock ==3){
+    //   currentBlock += 1;
+    // }
+    // else if (_this.get("writes") == 0 && currentBlock == 4 && lastBlock == 5){
+    //   currentBlock -= 1;
+    // }
 
     // Change length of progress bar based on the number of sections
     if (this.get("writes") == 0){
       Ember.$("#signup4").css("display","none");
 
       // Adjust bar length for missing card
-      if (currentBlock < 6) width = 25 * (currentBlock - 1);
+      if (currentBlock < 5) width = 25 * (currentBlock - 1);
       else width = 25 * (currentBlock - 2);
     }
     else{
@@ -25,32 +36,36 @@ export default Ember.Component.extend({
     Ember.$("#progress-bar").css("width", width + "%");
 
 
-    if (_this.get("lastBlock") > currentBlock){
-      Ember.$("#section"+(currentBlock+1)).removeClass("current");
-      Ember.$("#section"+(currentBlock+1)).removeClass("completed");
+
+    console.log("current: " + currentBlock + ", last: " + lastBlock);
+
+    if (lastBlock > currentBlock){
+      var offset = lastBlock - currentBlock;
+      Ember.$("#section"+(currentBlock+offset)).removeClass("current");
+      Ember.$("#section"+(currentBlock+offset)).removeClass("completed");
     }
     // Delay until progress bar is finished
     setTimeout(function() {
       if (_this.get("lastBlock") < currentBlock){
-        Ember.$("#section"+ (currentBlock - 1)).addClass("completed");
-        Ember.$("#section"+ (currentBlock - 1)).removeClass("current");
+        var offset = 1;
+        if (currentBlock == 5) offset = 2;
+        Ember.$("#section"+ (currentBlock - offset)).addClass("completed");
+        Ember.$("#section"+ (currentBlock - offset)).removeClass("current");
+
       }
       else {
         Ember.$("#section"+ (currentBlock)).removeClass("current");
         Ember.$("#section"+ (currentBlock)).removeClass("completed");
       }
 
-      // Check if we're skipping the writing experience card
-      if (_this.get("writes") == 0 && currentBlock == 4 && lastBlock == 3){
-         currentBlock += 1;
-      }
-      else {
 
-      }
       Ember.$("#section"+ currentBlock).addClass("current");
       _this.set("lastBlock", currentBlock);
     }, 300);
 
+    function resizeBar(){
+
+    }
   }),
   writesStatus: Ember.observer('writes', function() {
     console.log("called");

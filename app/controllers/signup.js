@@ -4,6 +4,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   responseMessage: '',
   current:1,
+  last:1,
   //Table data
   email: '',
   password: '',
@@ -40,49 +41,43 @@ export default Ember.Controller.extend({
   // Send form
   actions: {
     nextBlock(currentBlock){
-      this.set("current", currentBlock + 1);
-      var next = currentBlock+1;
-      var nextBlock = currentBlock+2;
-      var nextNextBlock = currentBlock+3;
+      this.set("last", currentBlock);
       Ember.$("#signup"+currentBlock).addClass("page-turn");
 
       if (this.get("writes") == 0){
-        if (currentBlock == 5){
-          Ember.$("#signup6").removeClass("block-1");
-          Ember.$("#signup6").removeClass("block-2");
-        }
+        if (currentBlock != 3)this.set("current", currentBlock + 1);
+        else this.set("current", currentBlock + 2);
       }
-        Ember.$("#signup"+next).removeClass("block-1");
-        Ember.$("#signup"+nextBlock).addClass("block-1");
-        Ember.$("#signup"+nextBlock).removeClass("block-2");
-        Ember.$("#signup"+nextNextBlock).addClass("block-2");
-        Ember.$("#signup"+nextNextBlock).removeClass("block-3");
+      else{
+        this.set("current", currentBlock + 1);
+      }
+        // Ember.$("#signup"+next).removeClass("block-1");
+        // Ember.$("#signup"+nextBlock).addClass("block-1");
+        // Ember.$("#signup"+nextBlock).removeClass("block-2");
+        // Ember.$("#signup"+nextNextBlock).addClass("block-2");
+        // Ember.$("#signup"+nextNextBlock).removeClass("block-3");
 
-
-      console.log(currentBlock);
       // Ember.$("#signup"+currentBlock).fadeToggle(".hidden");
       // Ember.$("#signup"+next).fadeToggle(".hidden");
+
     },
     lastBlock(currentBlock){
-      this.set("current", currentBlock - 1);
-      var last = currentBlock-1;
-      var nextBlock = currentBlock+1;
-      var nextNextBlock = currentBlock+2;
-      Ember.$("#signup"+last).removeClass("page-turn");
+      this.set("last", currentBlock);
 
       if (this.get("writes") == 0){
-        if (currentBlock == 5){
-          Ember.$("#signup6").removeClass("block-1");
-          Ember.$("#signup6").removeClass("block-2");
+        if (currentBlock != 5){
+          this.set("current", currentBlock - 1);
+          Ember.$("#signup"+(currentBlock-1)).removeClass("page-turn");
+        }
+        else {
+          this.set("current", currentBlock - 2);
+          Ember.$("#signup"+(currentBlock-2)).removeClass("page-turn");
         }
       }
-      Ember.$("#signup"+next).removeClass("block-1");
-      Ember.$("#signup"+nextBlock).addClass("block-1");
-      Ember.$("#signup"+nextBlock).removeClass("block-2");
-      Ember.$("#signup"+nextNextBlock).addClass("block-2");
-      Ember.$("#signup"+nextNextBlock).removeClass("block-3");
-
-      console.log(currentBlock);
+      else{
+        this.set("current", currentBlock - 1);
+        Ember.$("#signup"+(currentBlock-1)).removeClass("page-turn");
+      }
     },
 
     setEducation(value){
