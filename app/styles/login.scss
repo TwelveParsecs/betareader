@@ -219,7 +219,7 @@ $darkgrey: #4A4A4A;
 .button{
   z-index: 5;
   position: absolute;
-  top: calc(10% + 85px);
+  top: calc(10% + 75px);
   left:50%;
   transform: translateX(-50%);
   margin-top:20px;
@@ -300,11 +300,13 @@ $darkgrey: #4A4A4A;
   .button{
     width:230px;
     bottom:auto;
-    top:calc(10% + 70px);
+    top:calc(10% + 80px);
   }
 
   #hero-text{
     #hero-tag{
+      font-size: 1.75em;
+      width:400px;
     }
 
     #tag-line{
@@ -442,23 +444,23 @@ $darkgrey: #4A4A4A;
   }
 }
 
-@media (max-height:800px){
+@media (max-height:800px) and (min-width:1000px){
   #hero-text{
-    position: absolute;
-    top:0;
-    max-width: 1640px;
-    height:80vh;
-    width:100%;
-    margin: 0 auto;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
 
     #hero-tag{
       font-size: 2.125em;
-      width:300px;
+      width:400px;
       line-height: 1.25em;
+    }
 
+    #tag-line{
+      font-size: 18px;
+      width:300px;
+      line-height: 26px;
+    }
+
+    .button{
+      top:calc(25% + 210px);
     }
   }
 }
