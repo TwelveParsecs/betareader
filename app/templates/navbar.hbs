@@ -8,8 +8,15 @@
     <img src="assets/img/profilePic.svg" id="profile-pic"/>
 
     <div id="icon-block">
-      <img src="assets/img/notifications.svg" class="nav-icons"/>
-      <img src="assets/img/messageIcon.svg" class="nav-icons"/>
+      <span>
+        <img src="assets/img/notifications.svg" class="nav-icons"/>
+        {{tooltip-on-element text='This leads to notifications'}}
+      </span>
+
+      <span>
+        <img src="assets/img/messageIcon.svg" class="nav-icons"/>
+        {{tooltip-on-element text='This leads to messages'}}
+      </span>
     </div>
 
     <ul>

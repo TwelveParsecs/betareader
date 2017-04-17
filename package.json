@@ -31,6 +31,7 @@
     "ember-cli-sass": "6.1.1",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
+    "ember-cli-tooltipster": "0.7.1",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-windows-addon": "^1.3.1",
     "ember-concurrency": "0.7.19",
@@ -42,10 +43,13 @@
     "ember-modal-dialog": "1.0.0",
     "ember-radio-button": "1.1.1",
     "ember-resolver": "^2.0.3",
+    "ember-tether": "1.0.0-beta.0",
+    "ember-tooltips": "2.9.0-beta.0",
     "ember-uploader": "1.2.3",
     "ember-welcome-page": "^1.0.3",
     "emberfire": "2.0.6",
     "loader.js": "^4.0.10",
+    "tooltipster": "^4.2.2",
     "torii": "0.8.1"
   },
   "engines": {
