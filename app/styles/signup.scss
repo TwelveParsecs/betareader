@@ -204,9 +204,9 @@ form{
 
     z-index: 5;
     text-decoration: none;
-    font-family: aleoregular;
+    font-family: Lato;
     color:#fff;
-    font-weight: 600;
+    font-weight: 900;
     text-align: center;
     font-size: 16px;
     background-color: $orange;
@@ -273,7 +273,11 @@ form{
 @media (max-height:800px){
   form{
     #sign-up-progress-bar{
-      display:none;
+
+    }
+
+    .input-block{
+      top:calc(50% + 50px);
     }
   }
 }
